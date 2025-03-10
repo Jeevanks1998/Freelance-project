@@ -121,6 +121,10 @@ nav ul li a:hover {
 .quick-links .link a:hover {
     color: #007BFF;
 }
+.quick-links .link i {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
 
 /* Highlights */
 .highlights {
