@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - EduInstitute</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="register-container">
+        <h1>Student Registration</h1>
+        <form id="registration-form">
+            <!-- Full Name -->
+            <div class="form-group">
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <!-- Course Selection -->
+            <div class="form-group">
+                <label for="course">Select Course:</label>
+                <select id="course" name="course" required>
+                    <option value="">-- Select a Course --</option>
+                    <option value="Full Stack Development">Full Stack Development</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Cloud Computing">Cloud Computing</option>
+                    <option value="Cybersecurity">Cybersecurity</option>
+                    <option value="Python Programming">Python Programming</option>
+                    <option value="Machine Learning">Machine Learning</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                </select>
+            </div>
+
+            <!-- Batch Selection -->
+            <div class="form-group">
+                <label for="batch">Select Batch:</label>
+                <select id="batch" name="batch" required>
+                    <option value="">-- Select a Batch --</option>
+                    <option value="1st November (Online)">1st November (Online)</option>
+                    <option value="5th November (Offline)">5th November (Offline)</option>
+                    <option value="10th November (Online)">10th November (Online)</option>
+                    <option value="15th November (Online)">15th November (Online)</option>
+                    <option value="20th November (Offline)">20th November (Offline)</option>
+                    <option value="25th November (Online)">25th November (Online)</option>
+                    <option value="30th November (Offline)">30th November (Offline)</option>
+                    <option value="5th December (Online)">5th December (Online)</option>
+                </select>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+    <script src="register.js"></script>
+</body>
+</html>

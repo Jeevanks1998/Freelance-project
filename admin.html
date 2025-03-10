@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Complete Analytics</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Login Section -->
+    <section id="login-section" class="login-container">
+        <div class="login-header">
+            <h2><i class="fas fa-user"></i> Admin Login</h2>
+            <p>Please enter your credentials to access the admin panel.</p>
+        </div>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <div class="login-footer">
+            <p>Forgot your password? <a href="#">Reset here</a></p>
+        </div>
+    </section>
+
+    <!-- Admin Panel (Hidden by Default) -->
+    <div id="admin-panel" style="display: none;">
+        <!-- Admin Header -->
+        <header class="admin-header">
+            <div class="logo">Complete Analytics Admin</div>
+            <nav>
+                <ul>
+                    <li><a href="#course-management">Course Management</a></li>
+                    <li><a href="#batch-management">Batch Management</a></li>
+                    <li><a href="#student-management">Student Management</a></li>
+                    <li><a href="#content-management">Content Management</a></li>
+                    <li><a href="index.html" class="logout-btn">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Admin Main Content -->
+        <main class="admin-main">
+            <!-- Course Management -->
+            <section id="course-management" class="admin-section">
+                <h2>Course Management</h2>
+                <div class="admin-actions">
+                    <button id="add-course-btn">Add Course</button>
+                    <button id="update-course-btn">Update Course</button>
+                    <button id="remove-course-btn">Remove Course</button>
+                </div>
+                <div id="course-form" class="form-container">
+                    <form id="course-form-content">
+                        <input type="text" id="course-name" placeholder="Course Name" required>
+                        <textarea id="course-description" placeholder="Course Description" required></textarea>
+                        <input type="text" id="course-duration" placeholder="Duration" required>
+                        <input type="number" id="course-fees" placeholder="Fees" required>
+                        <input type="text" id="course-syllabus" placeholder="Syllabus" required>
+                        <input type="text" id="course-prerequisites" placeholder="Prerequisites">
+                        <button type="submit">Save Course</button>
+                    </form>
+                </div>
+                <div id="course-list" class="admin-list">
+                    <!-- Course list will be dynamically populated here -->
+                </div>
+            </section>
+
+            <!-- Batch Management -->
+            <section id="batch-management" class="admin-section">
+                <h2>Batch Management</h2>
+                <div class="admin-actions">
+                    <button id="add-batch-btn">Add Batch</button>
+                    <button id="update-batch-btn">Update Batch</button>
+                    <button id="remove-batch-btn">Remove Batch</button>
+                </div>
+                <div id="batch-form" class="form-container">
+                    <form id="batch-form-content">
+                        <select id="batch-course" required>
+                            <option value="">Select Course</option>
+                            <!-- Options will be populated dynamically -->
+                        </select>
+                        <input type="date" id="batch-start-date" placeholder="Start Date" required>
+                        <input type="text" id="batch-mode" placeholder="Mode (Online/Offline)" required>
+                        <button type="submit">Save Batch</button>
+                    </form>
+                </div>
+                <div id="batch-list" class="admin-list">
+                    <!-- Batch list will be dynamically populated here -->
+                </div>
+            </section>
+
+            <!-- Student Management -->
+            <section id="student-management" class="admin-section">
+                <h2>Student Management</h2>
+                <div class="admin-actions">
+                    <button id="view-students-btn">View Students</button>
+                    <button id="update-student-btn">Update Student</button>
+                    <button id="remove-student-btn">Remove Student</button>
+                </div>
+                <div id="student-list" class="admin-list">
+                    <!-- Student list will be dynamically populated here -->
+                </div>
+            </section>
+
+            <!-- Content Management -->
+            <section id="content-management" class="admin-section">
+                <h2>Content Management</h2>
+                <div class="admin-actions">
+                    <button id="add-blog-btn">Add Blog Post</button>
+                    <button id="add-testimonial-btn">Add Testimonial</button>
+                    <button id="add-announcement-btn">Add Announcement</button>
+                </div>
+                <div id="content-form" class="form-container">
+                    <form id="content-form-content">
+                        <select id="content-type" required>
+                            <option value="">Select Content Type</option>
+                            <option value="blog">Blog Post</option>
+                            <option value="testimonial">Testimonial</option>
+                            <option value="announcement">Announcement</option>
+                        </select>
+                        <input type="text" id="content-title" placeholder="Title" required>
+                        <textarea id="content-description" placeholder="Description" required></textarea>
+                        <button type="submit">Save Content</button>
+                    </form>
+                </div>
+                <div id="content-list" class="admin-list">
+                    <!-- Content list will be dynamically populated here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="admin-footer">
+            <p>© 2025 Complete Analytics Admin. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>
