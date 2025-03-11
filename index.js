@@ -104,7 +104,6 @@ closePopup.addEventListener('click', closePopupHandler);
 // Example: Open the popup after 1 second
 setTimeout(openPopup, 1000);
 
-// Testimonial and Placements Sliders
 document.addEventListener('DOMContentLoaded', function () {
     // Testimonial Slider
     const sliderTrack = document.querySelector('.slider-track');
@@ -114,23 +113,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function moveSlider() {
         currentIndex = (currentIndex + 1) % testimonials.length; // Loop back to the first slide
-        sliderTrack.style.transform = `translateX(-${currentIndex * testimonialWidth}px)`;
+        sliderTrack.style.transform = `translateX(-${currentIndex * testimonialWidth}px)`; // Corrected syntax
     }
 
     // Automatically move the slider every 3 seconds (adjust time interval as needed)
-    setInterval(moveSlider, 3000); // Moves every 3 seconds
+    setInterval(moveSlider, 1000);// Moves every 1 Seconds
 
     // Placements Slider
     const companySliderTrack = document.querySelector('.company-slider .slider-track');
     const slides = document.querySelectorAll('.company-slider .slide');
     const slideWidth = slides[0].offsetWidth + 20; // Width + margin
     let companyCurrentIndex = 0;
-
     function moveCompanySlider() {
         companyCurrentIndex = (companyCurrentIndex + 1) % slides.length; // Loop back to the first slide
-        companySliderTrack.style.transform = `translateX(-${companyCurrentIndex * slideWidth}px)`;
+        companySliderTrack.style.transform = `translateX(-${companyCurrentIndex * slideWidth}px)`; // Corrected syntax
     }
 
     // Automatically move the placement slider every 3 seconds (adjust time interval as needed)
-    setInterval(moveCompanySlider, 3000); // Moves every 3 seconds
+    setInterval(moveCompanySlider, 1000)// Moves every 1 second
 });
