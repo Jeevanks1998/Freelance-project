@@ -108,23 +108,17 @@ setTimeout(openPopup, 1000);
 document.addEventListener('DOMContentLoaded', function () {
     // Testimonial Slider
     const sliderTrack = document.querySelector('.slider-track');
-    const prevButton = document.getElementById('prev-slide');
-    const nextButton = document.getElementById('next-slide');
     const testimonials = document.querySelectorAll('.testimonial');
     const testimonialWidth = testimonials[0].offsetWidth + 20; // Width + margin
     let currentIndex = 0;
 
-    function moveSlider(direction) {
-        if (direction === 'next' && currentIndex < testimonials.length - 1) {
-            currentIndex++;
-        } else if (direction === 'prev' && currentIndex > 0) {
-            currentIndex--;
-        }
+    function moveSlider() {
+        currentIndex = (currentIndex + 1) % testimonials.length; // Loop back to the first slide
         sliderTrack.style.transform = `translateX(-${currentIndex * testimonialWidth}px)`;
     }
 
-    prevButton.addEventListener('click', () => moveSlider('prev'));
-    nextButton.addEventListener('click', () => moveSlider('next'));
+    // Automatically move the slider every 3 seconds (adjust time interval as needed)
+    setInterval(moveSlider, 3000); // Moves every 3 seconds
 
     // Placements Slider
     const companySliderTrack = document.querySelector('.company-slider .slider-track');
@@ -132,41 +126,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const slideWidth = slides[0].offsetWidth + 20; // Width + margin
     let companyCurrentIndex = 0;
 
-    function moveCompanySlider(direction) {
-        if (direction === 'next' && companyCurrentIndex < slides.length - 1) {
-            companyCurrentIndex++;
-        } else if (direction === 'prev' && companyCurrentIndex > 0) {
-            companyCurrentIndex--;
-        }
+    function moveCompanySlider() {
+        companyCurrentIndex = (companyCurrentIndex + 1) % slides.length; // Loop back to the first slide
         companySliderTrack.style.transform = `translateX(-${companyCurrentIndex * slideWidth}px)`;
     }
 
-    const companyPrevButton = document.createElement('button');
-    companyPrevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
-    companyPrevButton.style.position = 'absolute';
-    companyPrevButton.style.left = '10px';
-    companyPrevButton.style.top = '50%';
-    companyPrevButton.style.transform = 'translateY(-50%)';
-    companyPrevButton.style.background = 'none';
-    companyPrevButton.style.border = 'none';
-    companyPrevButton.style.fontSize = '24px';
-    companyPrevButton.style.color = '#007BFF';
-    companyPrevButton.style.cursor = 'pointer';
-    companyPrevButton.addEventListener('click', () => moveCompanySlider('prev'));
-
-    const companyNextButton = document.createElement('button');
-    companyNextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
-    companyNextButton.style.position = 'absolute';
-    companyNextButton.style.right = '10px';
-    companyNextButton.style.top = '50%';
-    companyNextButton.style.transform = 'translateY(-50%)';
-    companyNextButton.style.background = 'none';
-    companyNextButton.style.border = 'none';
-    companyNextButton.style.fontSize = '24px';
-    companyNextButton.style.color = '#007BFF';
-    companyNextButton.style.cursor = 'pointer';
-    companyNextButton.addEventListener('click', () => moveCompanySlider('next'));
-
-    document.querySelector('.company-slider').appendChild(companyPrevButton);
-    document.querySelector('.company-slider').appendChild(companyNextButton);
+    // Automatically move the placement slider every 3 seconds (adjust time interval as needed)
+    setInterval(moveCompanySlider, 3000); // Moves every 3 seconds
 });
