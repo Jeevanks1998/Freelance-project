@@ -1,28 +1,12 @@
-// JavaScript to handle the callback popup
-document.addEventListener('DOMContentLoaded', function () {
-    const popup = document.getElementById('callback-popup');
-    const closePopup = document.getElementById('close-popup');
-
-    // Function to open the popup
-    function openPopup() {
-        popup.style.display = 'flex';
-    }
-
-    // Function to close the popup
-    function closePopupHandler() {
-        popup.style.display = 'none';
-    }
-
-    // Event listener for closing the popup
-    closePopup.addEventListener('click', closePopupHandler);
-
-    // Example: Open the popup after 1 seconds (for demonstration)
-    setTimeout(openPopup, 1000);
+// Toggle Hamburger Menu
+document.getElementById('menu-toggle').addEventListener('click', function () {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('active');
 });
 
 // Chatbot Functionality
-const chatbotContainer = document.getElementById('chatbot-container');
 const chatbotToggleBtn = document.getElementById('chatbot-toggle-btn');
+const chatbotContainer = document.getElementById('chatbot-container');
 const closeChatbotBtn = document.getElementById('close-chatbot');
 const chatbotMessages = document.getElementById('chatbot-messages');
 const chatbotInputField = document.getElementById('chatbot-input-field');
@@ -107,8 +91,26 @@ function getBotResponse(userMessage) {
     }
 }
 
-// JavaScript for Testimonial Slider
+// Callback Popup
+const popup = document.getElementById('callback-popup');
+const closePopup = document.getElementById('close-popup');
+
+function openPopup() {
+    popup.style.display = 'flex';
+}
+
+function closePopupHandler() {
+    popup.style.display = 'none';
+}
+
+closePopup.addEventListener('click', closePopupHandler);
+
+// Example: Open the popup after 1 second
+setTimeout(openPopup, 1000);
+
+// Testimonial and Placements Sliders
 document.addEventListener('DOMContentLoaded', function () {
+    // Testimonial Slider
     const sliderTrack = document.querySelector('.slider-track');
     const prevButton = document.getElementById('prev-slide');
     const nextButton = document.getElementById('next-slide');
@@ -116,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const testimonialWidth = testimonials[0].offsetWidth + 20; // Width + margin
     let currentIndex = 0;
 
-    // Function to move the slider
     function moveSlider(direction) {
         if (direction === 'next' && currentIndex < testimonials.length - 1) {
             currentIndex++;
@@ -126,55 +127,50 @@ document.addEventListener('DOMContentLoaded', function () {
         sliderTrack.style.transform = `translateX(-${currentIndex * testimonialWidth}px)`;
     }
 
-    // Event listeners for navigation buttons
     prevButton.addEventListener('click', () => moveSlider('prev'));
     nextButton.addEventListener('click', () => moveSlider('next'));
-});
 
-// JavaScript for Placements Slider (Optional Manual Navigation)
-document.addEventListener('DOMContentLoaded', function () {
-    const sliderTrack = document.querySelector('.company-slider .slider-track');
+    // Placements Slider
+    const companySliderTrack = document.querySelector('.company-slider .slider-track');
     const slides = document.querySelectorAll('.company-slider .slide');
     const slideWidth = slides[0].offsetWidth + 20; // Width + margin
-    let currentIndex = 0;
+    let companyCurrentIndex = 0;
 
-    // Function to move the slider
-    function moveSlider(direction) {
-        if (direction === 'next' && currentIndex < slides.length - 1) {
-            currentIndex++;
-        } else if (direction === 'prev' && currentIndex > 0) {
-            currentIndex--;
+    function moveCompanySlider(direction) {
+        if (direction === 'next' && companyCurrentIndex < slides.length - 1) {
+            companyCurrentIndex++;
+        } else if (direction === 'prev' && companyCurrentIndex > 0) {
+            companyCurrentIndex--;
         }
-        sliderTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        companySliderTrack.style.transform = `translateX(-${companyCurrentIndex * slideWidth}px)`;
     }
 
-    // Optional: Add navigation buttons
-    const prevButton = document.createElement('button');
-    prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
-    prevButton.style.position = 'absolute';
-    prevButton.style.left = '10px';
-    prevButton.style.top = '50%';
-    prevButton.style.transform = 'translateY(-50%)';
-    prevButton.style.background = 'none';
-    prevButton.style.border = 'none';
-    prevButton.style.fontSize = '24px';
-    prevButton.style.color = '#007BFF';
-    prevButton.style.cursor = 'pointer';
-    prevButton.addEventListener('click', () => moveSlider('prev'));
+    const companyPrevButton = document.createElement('button');
+    companyPrevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+    companyPrevButton.style.position = 'absolute';
+    companyPrevButton.style.left = '10px';
+    companyPrevButton.style.top = '50%';
+    companyPrevButton.style.transform = 'translateY(-50%)';
+    companyPrevButton.style.background = 'none';
+    companyPrevButton.style.border = 'none';
+    companyPrevButton.style.fontSize = '24px';
+    companyPrevButton.style.color = '#007BFF';
+    companyPrevButton.style.cursor = 'pointer';
+    companyPrevButton.addEventListener('click', () => moveCompanySlider('prev'));
 
-    const nextButton = document.createElement('button');
-    nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
-    nextButton.style.position = 'absolute';
-    nextButton.style.right = '10px';
-    nextButton.style.top = '50%';
-    nextButton.style.transform = 'translateY(-50%)';
-    nextButton.style.background = 'none';
-    nextButton.style.border = 'none';
-    nextButton.style.fontSize = '24px';
-    nextButton.style.color = '#007BFF';
-    nextButton.style.cursor = 'pointer';
-    nextButton.addEventListener('click', () => moveSlider('next'));
+    const companyNextButton = document.createElement('button');
+    companyNextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+    companyNextButton.style.position = 'absolute';
+    companyNextButton.style.right = '10px';
+    companyNextButton.style.top = '50%';
+    companyNextButton.style.transform = 'translateY(-50%)';
+    companyNextButton.style.background = 'none';
+    companyNextButton.style.border = 'none';
+    companyNextButton.style.fontSize = '24px';
+    companyNextButton.style.color = '#007BFF';
+    companyNextButton.style.cursor = 'pointer';
+    companyNextButton.addEventListener('click', () => moveCompanySlider('next'));
 
-    document.querySelector('.company-slider').appendChild(prevButton);
-    document.querySelector('.company-slider').appendChild(nextButton);
+    document.querySelector('.company-slider').appendChild(companyPrevButton);
+    document.querySelector('.company-slider').appendChild(companyNextButton);
 });
