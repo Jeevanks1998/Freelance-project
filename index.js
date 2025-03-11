@@ -13,7 +13,7 @@ const chatbotInputField = document.getElementById('chatbot-input-field');
 const chatbotSendBtn = document.getElementById('chatbot-send-btn');
 const quickQuestionBtns = document.querySelectorAll('.quick-question-btn');
 
-// Toggle Chatbot
+// Toggle Chatbot Visibility
 chatbotToggleBtn.addEventListener('click', () => {
     chatbotContainer.style.display = 'block';
 });
@@ -24,17 +24,12 @@ closeChatbotBtn.addEventListener('click', () => {
 });
 
 // Send Message
-chatbotSendBtn.addEventListener('click', () => {
-    sendMessage();
-});
-
+chatbotSendBtn.addEventListener('click', sendMessage);
 chatbotInputField.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        sendMessage();
-    }
+    if (e.key === 'Enter') sendMessage();
 });
 
-// Quick Questions
+// Handle Quick Questions
 quickQuestionBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         const question = btn.getAttribute('data-question');
@@ -95,6 +90,7 @@ function getBotResponse(userMessage) {
 const popup = document.getElementById('callback-popup');
 const closePopup = document.getElementById('close-popup');
 
+// Open and Close Popup
 function openPopup() {
     popup.style.display = 'flex';
 }
