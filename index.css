@@ -61,6 +61,35 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
+/* Hamburger Menu for Mobile */
+#menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 5px;
+    }
+    nav ul.active {
+        display: flex;
+    }
+}
+
 /* Hero Section */
 .hero {
     background: url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
@@ -98,6 +127,22 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 20px;
+    }
+    .hero h1 {
+        font-size: 36px;
+    }
+    .hero p {
+        font-size: 18px;
+    }
+    .hero button {
+        display: block;
+        margin: 10px auto;
+    }
+}
+
 /* Quick Links */
 .quick-links {
     display: flex;
@@ -121,9 +166,16 @@ nav ul li a:hover {
 .quick-links .link a:hover {
     color: #007BFF;
 }
+
 .quick-links .link i {
     margin-right: 8px;
     font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+    .quick-links {
+        flex-direction: column;
+    }
 }
 
 /* Highlights */
@@ -161,6 +213,12 @@ nav ul li a:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+@media (max-width: 768px) {
+    .highlight-cards .card {
+        width: 100%;
+    }
+}
+
 /* News/Updates */
 .news {
     padding: 20px;
@@ -196,6 +254,12 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
+@media (max-width: 768px) {
+    .news-item {
+        width: 100%;
+    }
+}
+
 /* About Us */
 .about {
     padding: 20px;
@@ -228,6 +292,12 @@ nav ul li a:hover {
 
 .metrics .metric:hover {
     transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .metrics .metric {
+        width: 100%;
+    }
 }
 
 /* Courses */
@@ -289,6 +359,12 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
+@media (max-width: 768px) {
+    .course {
+        width: 100%;
+    }
+}
+
 /* Batches */
 .batches {
     padding: 20px;
@@ -348,6 +424,12 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
+@media (max-width: 768px) {
+    .batch {
+        width: 100%;
+    }
+}
+
 /* Testimonials Section */
 .testimonials {
     padding: 20px;
@@ -363,14 +445,14 @@ nav ul li a:hover {
 
 .testimonial-slider {
     position: relative;
-    width: 80%; /* Adjust the width of the slider */
-    margin: 0 auto; /* Center the slider */
-    overflow: hidden; /* Hide overflow content */
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .slider-track {
     display: flex;
-    transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
+    transition: transform 0.5s ease-in-out;
 }
 
 .testimonial {
@@ -378,13 +460,13 @@ nav ul li a:hover {
     padding: 20px;
     margin: 10px;
     border-radius: 8px;
-    width: 300px; /* Fixed width for each testimonial */
+    width: 300px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     display: flex;
     align-items: center;
     gap: 10px;
-    flex-shrink: 0; /* Prevent shrinking */
+    flex-shrink: 0;
 }
 
 .testimonial i {
@@ -396,25 +478,13 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
-/* Slider Navigation Icons */
-.slider-nav {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px; /* Position icons on top */
-}
-
-.slider-nav button {
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: #007BFF;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.slider-nav button:hover {
-    color: #0056b3;
+@media (max-width: 768px) {
+    .testimonial-slider {
+        width: 100%;
+    }
+    .testimonial {
+        width: 90%;
+    }
 }
 
 /* Placements Section */
@@ -452,7 +522,7 @@ nav ul li a:hover {
 
 .slider-track {
     display: flex;
-    animation: scroll 20s linear infinite; /* Auto-scroll animation */
+    animation: scroll 20s linear infinite;
 }
 
 .slide {
@@ -474,13 +544,9 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
-/* Keyframes for auto-scroll animation */
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
+@media (max-width: 768px) {
+    .slide {
+        width: 150px;
     }
 }
 
@@ -526,6 +592,13 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
+@media (max-width: 768px) {
+    #contact-form input,
+    #contact-form textarea {
+        width: 100%;
+    }
+}
+
 /* Footer */
 footer {
     background-color: #333;
@@ -546,11 +619,10 @@ footer {
     color: #007BFF;
 }
 
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@media (max-width: 768px) {
+    .social-links {
+        flex-direction: column;
+    }
 }
 
 /* Chatbot Container */
@@ -737,16 +809,16 @@ footer {
 
 /* Callback Popup */
 .popup {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    z-index: 1001; /* Ensure it's above other elements */
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
 }
 
 .popup-content {
@@ -756,7 +828,7 @@ footer {
     width: 300px;
     text-align: center;
     position: relative;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .popup-content h3 {
@@ -839,41 +911,5 @@ footer {
     }
     to {
         transform: translateY(0);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .hero p {
-        font-size: 18px;
-    }
-
-    .quick-links {
-        flex-direction: column;
-    }
-
-    .highlight-cards .card,
-    .metrics .metric,
-    .course,
-    .batch,
-    .testimonial {
-        width: 100%;
-    }
-
-    #chatbot-container {
-        width: 90%;
-    }
-
-    .popup-content {
-        width: 90%;
     }
 }
