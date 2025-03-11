@@ -514,10 +514,10 @@ nav ul li a:hover {
 }
 
 .company-slider {
+    position: relative;
     overflow: hidden;
     width: 100%;
     margin-top: 20px;
-    position: relative;
 }
 
 .slider-track {
