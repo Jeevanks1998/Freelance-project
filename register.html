@@ -3,51 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - EduInstitute</title>
+    <title>Register - Complete Analytics</title>
     <link rel="stylesheet" href="register.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Razorpay Checkout Integration -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <!-- jsPDF for generating PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- EmailJS for sending emails -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <style>
+        /* Splash Screen Styles */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .splash-content {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .splash-content h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .splash-content p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        #close-splash {
+            padding: 0.75rem 1.5rem;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #close-splash:hover {
+            background-color: #2980b9;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Style for the bill/receipt */
+        .bill-container {
+            display: none; /* Hidden by default */
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .bill-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .bill-container p {
+            margin: 10px 0;
+        }
+
+        .download-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3399cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Style for form icons */
+        .form-group {
+            position: relative;
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+        }
+
+        .form-group input, .form-group select {
+            padding-left: 35px; /* Add space for the icon */
+        }
+    </style>
 </head>
 <body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="splash-content">
+            <h1>Welcome to Complete Analytics Student Registration</h1>
+            <p>We are excited to have you onboard. Please proceed to register for your course.</p>
+            <button id="close-splash">Continue</button>
+        </div>
+    </div>
+
+    <!-- Registration Form -->
     <div class="register-container">
         <h1>Student Registration</h1>
         <form id="registration-form">
             <!-- Full Name -->
             <div class="form-group">
-                <label for="full-name">Full Name:</label>
+                <label for="full-name"><i class="fas fa-user"></i> Full Name:</label>
                 <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
             </div>
 
             <!-- Email -->
             <div class="form-group">
-                <label for="email">Email:</label>
+                <label for="email"><i class="fas fa-envelope"></i> Email:</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
             </div>
 
             <!-- Phone Number -->
             <div class="form-group">
-                <label for="phone">Phone Number:</label>
+                <label for="phone"><i class="fas fa-phone"></i> Phone Number:</label>
                 <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <!-- College Name -->
+            <div class="form-group">
+                <label for="college-name"><i class="fas fa-school"></i> College Name:</label>
+                <input type="text" id="college-name" name="college-name" placeholder="Enter your college name" required>
+            </div>
+
+            <!-- Stream -->
+            <div class="form-group">
+                <label for="stream"><i class="fas fa-graduation-cap"></i> Stream:</label>
+                <input type="text" id="stream" name="stream" placeholder="Enter your stream (e.g., Computer Science)" required>
+            </div>
+
+            <!-- Passed Out Year -->
+            <div class="form-group">
+                <label for="passed-out-year"><i class="fas fa-calendar-alt"></i> Passed Out Year:</label>
+                <input type="number" id="passed-out-year" name="passed-out-year" placeholder="Enter your passed out year" min="1900" max="2099" required>
             </div>
 
             <!-- Course Selection -->
             <div class="form-group">
-                <label for="course">Select Course:</label>
+                <label for="course"><i class="fas fa-book"></i> Select Course:</label>
                 <select id="course" name="course" required>
                     <option value="">-- Select a Course --</option>
-                    <option value="Full Stack Development">Full Stack Development</option>
-                    <option value="Data Science">Data Science</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="Cloud Computing">Cloud Computing</option>
-                    <option value="Cybersecurity">Cybersecurity</option>
-                    <option value="Python Programming">Python Programming</option>
-                    <option value="Machine Learning">Machine Learning</option>
-                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Full Stack Development" data-price="50000">Full Stack Development - ₹50,000</option>
+                    <option value="Data Science" data-price="60000">Data Science - ₹60,000</option>
+                    <option value="Digital Marketing" data-price="30000">Digital Marketing - ₹30,000</option>
+                    <option value="Cloud Computing" data-price="40000">Cloud Computing - ₹40,000</option>
+                    <option value="Cybersecurity" data-price="55000">Cybersecurity - ₹55,000</option>
+                    <option value="Python Programming" data-price="25000">Python Programming - ₹25,000</option>
+                    <option value="Machine Learning" data-price="65000">Machine Learning - ₹65,000</option>
+                    <option value="Artificial Intelligence" data-price="70000">Artificial Intelligence - ₹70,000</option>
                 </select>
             </div>
 
             <!-- Batch Selection -->
             <div class="form-group">
-                <label for="batch">Select Batch:</label>
+                <label for="batch"><i class="fas fa-calendar-check"></i> Select Batch:</label>
                 <select id="batch" name="batch" required>
                     <option value="">-- Select a Batch --</option>
                     <option value="1st November (Online)">1st November (Online)</option>
@@ -61,12 +213,177 @@
                 </select>
             </div>
 
+            <!-- Payment Section -->
+            <div class="form-group">
+                <label><i class="fas fa-credit-card"></i> Payment Method:</label>
+                <div class="payment-options">
+                    <input type="radio" id="credit-card" name="payment" value="credit-card" checked>
+                    <label for="credit-card">Credit Card</label>
+                    <input type="radio" id="debit-card" name="payment" value="debit-card">
+                    <label for="debit-card">Debit Card</label>
+                    <input type="radio" id="upi" name="payment" value="upi">
+                    <label for="upi">UPI</label>
+                </div>
+            </div>
+
             <!-- Submit Button -->
             <div class="form-group">
-                <button type="submit">Register</button>
+                <button type="button" id="pay-button"><i class="fas fa-wallet"></i> Proceed to Pay</button>
             </div>
         </form>
+
+        <!-- Bill/Receipt Section -->
+        <div id="bill-container" class="bill-container">
+            <h2>Payment Receipt</h2>
+            <p><strong>Name:</strong> <span id="bill-name"></span></p>
+            <p><strong>Email:</strong> <span id="bill-email"></span></p>
+            <p><strong>Phone:</strong> <span id="bill-phone"></span></p>
+            <p><strong>College Name:</strong> <span id="bill-college-name"></span></p>
+            <p><strong>Stream:</strong> <span id="bill-stream"></span></p>
+            <p><strong>Passed Out Year:</strong> <span id="bill-passed-out-year"></span></p>
+            <p><strong>Course:</strong> <span id="bill-course"></span></p>
+            <p><strong>Batch:</strong> <span id="bill-batch"></span></p>
+            <p><strong>Amount Paid:</strong> <span id="bill-amount"></span></p>
+            <p><strong>Payment ID:</strong> <span id="bill-payment-id"></span></p>
+            <button id="download-bill" class="download-button"><i class="fas fa-download"></i> Download Bill</button>
+        </div>
     </div>
-    <script src="register.js"></script>
+
+    <script>
+        // Close Splash Screen
+        document.getElementById('close-splash').onclick = function() {
+            document.getElementById('splash-screen').style.display = 'none';
+        };
+
+        // Initialize EmailJS with your User ID
+        emailjs.init("M28PuAOHFrl8C-SRhwrt9"); // Replace with your EmailJS user ID
+
+        // Function to generate and download the bill as PDF
+        function generateAndDownloadBill(fullName, email, phone, collegeName, stream, passedOutYear, course, batch, amount, paymentId) {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Add content to the PDF
+            doc.setFontSize(18);
+            doc.text("Complete Analytics - Payment Receipt", 10, 20);
+            doc.setFontSize(12);
+            doc.text(`Name: ${fullName}`, 10, 40);
+            doc.text(`Email: ${email}`, 10, 50);
+            doc.text(`Phone: ${phone}`, 10, 60);
+            doc.text(`College Name: ${collegeName}`, 10, 70);
+            doc.text(`Stream: ${stream}`, 10, 80);
+            doc.text(`Passed Out Year: ${passedOutYear}`, 10, 90);
+            doc.text(`Course: ${course}`, 10, 100);
+            doc.text(`Batch: ${batch}`, 10, 110);
+            doc.text(`Amount Paid: ₹${amount}`, 10, 120);
+            doc.text(`Payment ID: ${paymentId}`, 10, 130);
+
+            // Save the PDF
+            doc.save(`Payment_Receipt_${paymentId}.pdf`);
+            return doc.output('blob');
+        }
+
+        // Function to send the bill via email using EmailJS
+        function sendBillViaEmail(fullName, email, collegeName, stream, passedOutYear, course, batch, amount, paymentId, pdfBlob) {
+            // Create the email body with a welcome message
+            const emailBody = `
+                Hi ${fullName},<br><br>
+                Thank you for registering for ${course} (Batch: ${batch}).<br>
+                College Name: ${collegeName}<br>
+                Stream: ${stream}<br>
+                Passed Out Year: ${passedOutYear}<br>
+                Amount Paid: ₹${amount}<br>
+                Payment ID: ${paymentId}<br><br>
+                We are excited to welcome you to the course and will get in touch with more details soon.<br>
+                <br>
+                Regards,<br>
+                Complete Analytics Team
+            `;
+
+            // Send the email with the PDF attachment using EmailJS
+            emailjs.send("service_lgy2iun", "template_4c9nkyz", {
+                from_name: "Complete Analytics",
+                to_email: email,
+                subject: 'Payment Receipt & Welcome Onboard - Complete Analytics',
+                body: emailBody,
+                attachment: pdfBlob // Attach the PDF
+            })
+            .then((response) => {
+                console.log('Email sent successfully:', response);
+            })
+            .catch((error) => {
+                console.error('Failed to send email:', error);
+            });
+        }
+
+        // Razorpay Integration
+        document.getElementById('pay-button').onclick = function(e) {
+            // Get all the required fields
+            const fullName = document.getElementById('full-name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const collegeName = document.getElementById('college-name').value;
+            const stream = document.getElementById('stream').value;
+            const passedOutYear = document.getElementById('passed-out-year').value;
+            const courseSelect = document.getElementById('course');
+            const selectedCourse = courseSelect.options[courseSelect.selectedIndex];
+            const batchSelect = document.getElementById('batch');
+            const selectedBatch = batchSelect.options[batchSelect.selectedIndex];
+
+            // Check if all fields are filled
+            if (!fullName || !email || !phone || !collegeName || !stream || !passedOutYear || !selectedCourse.value || !selectedBatch.value) {
+                alert("Please fill out all the fields before proceeding to payment.");
+                return; // Stop further execution if any field is empty
+            }
+
+            const coursePrice = selectedCourse.getAttribute('data-price'); // Get the price from the selected course
+
+            var options = {
+                "key": "rzp_test_1DP5mmOlF5G5ag", // Replace with your Razorpay Key ID
+                "amount": coursePrice * 100, // Convert price to paise (e.g., ₹50,000 = 5000000 paise)
+                "currency": "INR",
+                "name": "Complete Analytics", 
+                "description": `Course Registration Fee for ${selectedCourse.text}`,
+                "image": "https://your-logo-url.com/logo.png", 
+                "handler": function (response) {
+                    // Display the bill/receipt
+                    document.getElementById('bill-name').textContent = fullName;
+                    document.getElementById('bill-email').textContent = email;
+                    document.getElementById('bill-phone').textContent = phone;
+                    document.getElementById('bill-college-name').textContent = collegeName;
+                    document.getElementById('bill-stream').textContent = stream;
+                    document.getElementById('bill-passed-out-year').textContent = passedOutYear;
+                    document.getElementById('bill-course').textContent = selectedCourse.text;
+                    document.getElementById('bill-batch').textContent = selectedBatch.text;
+                    document.getElementById('bill-amount').textContent = `₹${coursePrice}`;
+                    document.getElementById('bill-payment-id').textContent = response.razorpay_payment_id;
+
+                    // Show the bill container
+                    document.getElementById('bill-container').style.display = 'block';
+
+                    // Generate the PDF blob
+                    const pdfBlob = generateAndDownloadBill(fullName, email, phone, collegeName, stream, passedOutYear, selectedCourse.text, selectedBatch.text, coursePrice, response.razorpay_payment_id);
+
+                    // Send the email with the bill and welcome message
+                    sendBillViaEmail(fullName, email, collegeName, stream, passedOutYear, selectedCourse.text, selectedBatch.text, coursePrice, response.razorpay_payment_id, pdfBlob);
+                },
+                "prefill": {
+                    "name": fullName,
+                    "email": email,
+                    "contact": phone
+                },
+                "notes": {
+                    "course": selectedCourse.value,
+                    "batch": selectedBatch.value
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+            var rzp = new Razorpay(options);
+            rzp.open();
+            e.preventDefault();
+        };
+    </script>
 </body>
 </html>
