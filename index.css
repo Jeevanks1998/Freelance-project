@@ -71,7 +71,7 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 100px) {
     #menu-toggle {
         display: block;
     }
