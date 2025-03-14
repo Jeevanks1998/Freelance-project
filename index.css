@@ -1,67 +1,67 @@
 /* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #000000;
-}
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #000000;
+        }
 
-/* Header and Navigation */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+        /* Header and Navigation */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-header .logo {
-    font-size: 24px;
-    font-weight: bold;
-}
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-nav ul {
-    list-style: none;
-    display: flex;
-}
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
 
-nav ul li {
-    margin-left: 20px;
-}
+        nav ul li {
+            margin-left: 20px;
+        }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
 
-nav ul li a:hover {
-    color: #007BFF;
-}
+        nav ul li a:hover {
+            color: #007BFF;
+        }
 
-.login-btn {
-    background-color: #007BFF;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
+        .login-btn {
+            background-color: #007BFF;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-.login-btn:hover {
-    background-color: #0056b3;
-}
+        .login-btn:hover {
+            background-color: #0056b3;
+        }
 
-/* Hamburger Menu for Mobile */
+        /* Hamburger Menu for Mobile */
         #menu-toggle {
             display: none;
             font-size: 24px;
