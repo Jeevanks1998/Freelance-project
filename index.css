@@ -62,54 +62,54 @@ nav ul li a:hover {
 }
 
 /* Hamburger Menu for Mobile */
-#menu-toggle {
-    display: none;
-    font-size: 5px;
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-}
+        #menu-toggle {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
 
-@media (max-width: 100px) {
-    #menu-toggle {
-        display: block;
-    }
+        @media (max-width: 768px) {
+            #menu-toggle {
+                display: block;
+            }
 
-    nav ul {
-        display: none;
-        flex-direction: column;
-        background-color: #333;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-    }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
 
-    nav ul.active {
-        display: flex;
-    }
+            nav ul.active {
+                display: flex;
+            }
 
-    nav ul li {
-        margin: 10px 0;
-    }
+            nav ul li {
+                margin: 10px 0;
+            }
 
-    nav ul li a {
-        padding: 10px 20px;
-        display: block;
-    }
+            nav ul li a {
+                padding: 10px 20px;
+                display: block;
+            }
 
-    nav ul li a:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
+            nav ul li a:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
 
-    .login-btn {
-        padding: 10px 20px;
-        margin: 10px 0;
-    }
-}
+            .login-btn {
+                padding: 10px 20px;
+                margin: 10px 0;
+            }
+        }
 
 /* Hero Section */
 .hero {
