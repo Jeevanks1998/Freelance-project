@@ -76,7 +76,6 @@ nav ul li a:hover {
         display: block;
     }
 
-    /* Fixing nav ul styling for active state */
     nav ul {
         display: none;
         flex-direction: column;
@@ -85,10 +84,8 @@ nav ul li a:hover {
         top: 60px;
         right: 0;
         width: 100%;
-        padding: 10px 0; /* Adjust padding */
-        border-radius: 5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-align: center; /* Center the nav items */
+        text-align: center;
+        padding: 10px 0;
     }
 
     nav ul.active {
@@ -96,20 +93,21 @@ nav ul li a:hover {
     }
 
     nav ul li {
-        margin-left: 0; /* Reset left margin in mobile view */
-        padding: 10px 0; /* Add padding for better spacing */
+        margin: 10px 0;
     }
 
     nav ul li a {
-        display: block; /* Ensure links are block-level for better clickability */
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease;
+        padding: 10px 20px;
+        display: block;
     }
 
     nav ul li a:hover {
-        color: #007BFF;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .login-btn {
+        padding: 10px 20px;
+        margin: 10px 0;
     }
 }
 
@@ -282,6 +280,23 @@ nav ul li a:hover {
         width: 100%;
     }
 }
+/* Register Button Styles */
+.register-button {
+    display: inline-block; /* Make it behave like a button */
+    margin-top: 10px; /* Space above the button */
+    padding: 10px 20px; /* Padding inside the button */
+    background-color: #007bff; /* Blue background color */
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 1em; /* Font size */
+    text-align: center; /* Center text */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.register-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
 
 /* About Us */
 .about {
@@ -368,6 +383,17 @@ nav ul li a:hover {
     font-size: 24px;
 }
 
+.course p {
+    margin-bottom: 10px;
+}
+
+.course .buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+}
+
 .course button {
     padding: 10px 20px;
     font-size: 16px;
@@ -376,6 +402,7 @@ nav ul li a:hover {
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    flex: 1;
 }
 
 .course button:hover {
@@ -452,6 +479,39 @@ nav ul li a:hover {
         width: 100%;
     }
 }
+
+/* Got Questions Section */
+.got-questions {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.got-questions p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.got-questions button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.got-questions button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
 
 /* Testimonials Section */
 .testimonials {
@@ -545,7 +605,7 @@ nav ul li a:hover {
 
 .slider-track {
     display: flex;
-    animation: scroll 10s linear;
+    animation: scroll 10s linear infinite;
 }
 
 .slide {
@@ -657,31 +717,32 @@ footer {
     }
 }
 
-/* Chatbot Container */
 #chatbot-container {
     position: fixed;
-    bottom: 20px;
+    bottom: -400px; /* Start off-screen */
     right: 20px;
     width: 300px;
+    height: 400px; /* Initial height */
     background-color: #fff;
+    border: 1px solid #ccc;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: bottom 0.3s ease-in-out, height 0.3s ease-in-out; /* Add height transition */
     z-index: 1000;
-    animation: slideInUp 0.5s ease-in-out;
+    overflow: hidden; /* Ensure content doesn't overflow */
 }
 
 #chatbot-container.active {
-    display: flex;
+    bottom: 20px; /* Pop up to this position */
+    height: 450px; /* Slightly increase height when active */
 }
 
-/* Chatbot Header */
 #chatbot-header {
-    background-color: #007BFF;
-    color: #fff;
     padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -689,7 +750,6 @@ footer {
 
 #chatbot-header h3 {
     margin: 0;
-    font-size: 16px;
 }
 
 #close-chatbot {
@@ -698,121 +758,85 @@ footer {
     color: #fff;
     font-size: 20px;
     cursor: pointer;
-    transition: color 0.3s ease;
 }
 
-#close-chatbot:hover {
-    color: #ff4d4d;
-}
-
-/* Chatbot Body */
 #chatbot-body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
     padding: 10px;
+    height: calc(100% - 60px); /* Adjust height to fit container */
+    overflow-y: auto;
 }
 
-/* Chatbot Messages */
 #chatbot-messages {
-    flex-grow: 1;
-    overflow-y: auto;
     margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 }
 
 .message {
-    padding: 8px 12px;
-    margin: 5px 0;
-    border-radius: 8px;
-    max-width: 80%;
-    word-wrap: break-word;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 .bot-message {
     background-color: #f1f1f1;
-    align-self: flex-start;
 }
 
 .user-message {
-    background-color: #007BFF;
+    background-color: #007bff;
     color: #fff;
-    align-self: flex-end;
+    text-align: right;
 }
 
-/* Quick Questions */
 .quick-questions {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 5px;
 }
 
 .quick-question-btn {
-    background-color: #007BFF;
+    padding: 5px;
+    background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
     text-align: left;
-    transition: background-color 0.3s ease;
 }
 
-.quick-question-btn:hover {
-    background-color: #0056b3;
-}
-
-/* Chatbot Input */
 #chatbot-input {
     display: flex;
-    gap: 10px;
-    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ccc;
 }
 
 #chatbot-input-field {
-    flex-grow: 1;
-    padding: 8px;
+    flex: 1;
+    padding: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 14px;
 }
 
 #chatbot-send-btn {
-    background-color: #007BFF;
+    padding: 5px 10px;
+    background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 8px 12px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-#chatbot-send-btn:hover {
-    background-color: #0056b3;
-}
-
-/* Chatbot Toggle Button */
 #chatbot-toggle-btn {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #007BFF;
+    padding: 10px;
+    background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 15px;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-#chatbot-toggle-btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Animations */
