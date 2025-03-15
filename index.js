@@ -1,33 +1,35 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.addEventListener('DOMContentLoaded', function () {
-        // Hamburger Menu Toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('menu');
-    
+    // Hamburger Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    if (menuToggle && menu) {
         menuToggle.addEventListener('click', function () {
-            menu.classList.toggle('active'); // Toggle the 'active' class
+            menu.classList.toggle('active');
         });
-    
+
         // Close the menu when clicking outside
         document.addEventListener('click', function (event) {
             if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
-                menu.classList.remove('active'); // Close the menu
+                menu.classList.remove('active');
             }
         });
-    });
+    }
 
     // Align Download Buttons
     function alignDownloadButtons() {
         const courseCards = document.querySelectorAll('.course');
-        courseCards.forEach(card => {
-            const buttonsContainer = card.querySelector('.course-buttons');
-            if (buttonsContainer) {
-                buttonsContainer.style.display = 'flex';
-                buttonsContainer.style.justifyContent = 'space-between';
-                buttonsContainer.style.alignItems = 'center';
-                buttonsContainer.style.gap = '10px';
-            }
-        });
+        if (courseCards.length > 0) {
+            courseCards.forEach(card => {
+                const buttonsContainer = card.querySelector('.course-buttons');
+                if (buttonsContainer) {
+                    buttonsContainer.style.display = 'flex';
+                    buttonsContainer.style.justifyContent = 'space-between';
+                    buttonsContainer.style.alignItems = 'center';
+                    buttonsContainer.style.gap = '10px';
+                }
+            });
+        }
     }
     window.addEventListener('load', alignDownloadButtons);
 
@@ -40,26 +42,30 @@ document.addEventListener('DOMContentLoaded', function () {
     const chatbotSendBtn = document.getElementById('chatbot-send-btn');
     const quickQuestionBtns = document.querySelectorAll('.quick-question-btn');
 
-    chatbotToggleBtn.addEventListener('click', () => {
-        chatbotContainer.classList.toggle('active');
-    });
-
-    closeChatbotBtn.addEventListener('click', () => {
-        chatbotContainer.classList.remove('active');
-    });
-
-    chatbotSendBtn.addEventListener('click', sendMessage);
-    chatbotInputField.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') sendMessage();
-    });
-
-    quickQuestionBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const question = btn.getAttribute('data-question');
-            chatbotInputField.value = question;
-            sendMessage();
+    if (chatbotToggleBtn && chatbotContainer && closeChatbotBtn && chatbotMessages && chatbotInputField && chatbotSendBtn) {
+        chatbotToggleBtn.addEventListener('click', () => {
+            chatbotContainer.classList.toggle('active');
         });
-    });
+
+        closeChatbotBtn.addEventListener('click', () => {
+            chatbotContainer.classList.remove('active');
+        });
+
+        chatbotSendBtn.addEventListener('click', sendMessage);
+        chatbotInputField.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        if (quickQuestionBtns.length > 0) {
+            quickQuestionBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const question = btn.getAttribute('data-question');
+                    chatbotInputField.value = question;
+                    sendMessage();
+                });
+            });
+        }
+    }
 
     function sendMessage() {
         const userMessage = chatbotInputField.value.trim();
@@ -103,40 +109,48 @@ document.addEventListener('DOMContentLoaded', function () {
     const popup = document.getElementById('callback-popup');
     const closePopup = document.getElementById('close-popup');
 
-    function openPopup() {
-        popup.style.display = 'flex';
-    }
+    if (popup && closePopup) {
+        function openPopup() {
+            popup.style.display = 'flex';
+        }
 
-    function closePopupHandler() {
-        popup.style.display = 'none';
-    }
+        function closePopupHandler() {
+            popup.style.display = 'none';
+        }
 
-    closePopup.addEventListener('click', closePopupHandler);
-    setTimeout(openPopup, 1000);
+        closePopup.addEventListener('click', closePopupHandler);
+        setTimeout(openPopup, 1000);
+    }
 
     // Testimonial Slider
     const sliderTrack = document.querySelector('.slider-track');
     const testimonials = document.querySelectorAll('.testimonial');
-    const testimonialWidth = testimonials[0].offsetWidth + 20;
-    let currentIndex = 0;
 
-    function moveSlider() {
-        currentIndex = (currentIndex + 1) % testimonials.length;
-        sliderTrack.style.transform = `translateX(-${currentIndex * testimonialWidth}px)`;
+    if (sliderTrack && testimonials.length > 0) {
+        const testimonialWidth = testimonials[0].offsetWidth + 20;
+        let currentIndex = 0;
+
+        function moveSlider() {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            sliderTrack.style.transform = `translateX(-${currentIndex * testimonialWidth}px)`;
+        }
+        setInterval(moveSlider, 3000);
     }
-    setInterval(moveSlider, 3000);
 
     // Placements Slider
     const companySliderTrack = document.querySelector('.company-slider .slider-track');
     const slides = document.querySelectorAll('.company-slider .slide');
-    const slideWidth = slides[0].offsetWidth + 20;
-    let companyCurrentIndex = 0;
 
-    function moveCompanySlider() {
-        companyCurrentIndex = (companyCurrentIndex + 1) % slides.length;
-        companySliderTrack.style.transform = `translateX(-${companyCurrentIndex * slideWidth}px)`;
+    if (companySliderTrack && slides.length > 0) {
+        const slideWidth = slides[0].offsetWidth + 20;
+        let companyCurrentIndex = 0;
+
+        function moveCompanySlider() {
+            companyCurrentIndex = (companyCurrentIndex + 1) % slides.length;
+            companySliderTrack.style.transform = `translateX(-${companyCurrentIndex * slideWidth}px)`;
+        }
+        setInterval(moveCompanySlider, 3000);
     }
-    setInterval(moveCompanySlider, 3000);
 
     // Download Syllabus
     function downloadSyllabus(pdfPath) {
