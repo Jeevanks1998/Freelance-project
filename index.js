@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // JavaScript to toggle the mobile menu
-const menuToggle = document.getElementById('menu-toggle');
-const navUl = document.querySelector('nav ul');
-
-menuToggle.addEventListener('click', () => {
-    navUl.classList.toggle('active'); // Toggle the 'active' class
-}); 
+   // Hamburger Menu
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+        const menu = document.getElementById('menu');
+        menu.classList.toggle('active');
+    });
 
     // Align Download Buttons
     function alignDownloadButtons() {
