@@ -31,15 +31,16 @@ header {
     display: flex;
     align-items: center; /* Vertically center the logo and text */
     gap: 10px; /* Space between logo and company name */
+    height: 100%; /* Ensure the logo container takes full height of the header */
 }
 
 .logo img {
-    height: 80px; /* Adjust the height of the logo for mobile */
+    height: 60px; /* Adjust the height of the logo to fit within the header */
     width: auto; /* Maintain aspect ratio */
 }
 
 .logo span {
-    font-size: 80px; /* Smaller font size for mobile */
+    font-size: 24px; /* Adjust font size to fit within the header */
     font-weight: bold;
     color: #fff;
 }
@@ -49,6 +50,8 @@ nav ul {
     list-style: none;
     display: flex;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
