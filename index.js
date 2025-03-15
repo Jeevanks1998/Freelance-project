@@ -1,8 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
-   // Hamburger Menu
-    document.getElementById('menu-toggle').addEventListener('click', function () {
+    document.addEventListener('DOMContentLoaded', function () {
+        // Hamburger Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
         const menu = document.getElementById('menu');
-        menu.classList.toggle('active');
+    
+        menuToggle.addEventListener('click', function () {
+            menu.classList.toggle('active'); // Toggle the 'active' class
+        });
+    
+        // Close the menu when clicking outside
+        document.addEventListener('click', function (event) {
+            if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+                menu.classList.remove('active'); // Close the menu
+            }
+        });
     });
 
     // Align Download Buttons
@@ -137,5 +148,3 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.removeChild(link);
     }
 });
-
-
