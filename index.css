@@ -113,7 +113,7 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background-image: url("images/rm373batch13-blogbanner-05.jpg");
+    background-image: url("C:/Users/jeeva/OneDrive/Desktop/Freelance Project/images/rm373batch13-blogbanner-05.jpg");
     background-size: cover; /* Ensures the image covers the entire section */
     background-position: center center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -173,7 +173,7 @@ nav ul li a:hover {
 }
 
 /* Responsive Design for Mobile */
-@media (max-width: 500px) {
+@media (max-width: 768px) {
     .hero {
         height: 80vh; /* Adjust height for smaller screens */
         background-position: center top; /* Adjust background position for mobile */
