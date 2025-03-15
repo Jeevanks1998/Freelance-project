@@ -113,7 +113,7 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background-image: url("images/rm373batch13-blogbanner-05.jpg");
+     background-image: url("images/rm373batch13-blogbanner-05.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -139,6 +139,7 @@ nav ul li a:hover {
 .hero-content {
     position: relative;
     z-index: 1;
+    padding: 20px; /* Add padding for better spacing on mobile */
 }
 
 .hero h1 {
@@ -189,17 +190,25 @@ nav ul li a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero {
+        height: 80vh; /* Adjust height for smaller screens */
+    }
+
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2rem; /* Smaller font size for mobile */
     }
 
     .hero p {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Smaller font size for mobile */
     }
 
     .hero button {
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
+        font-size: 0.9rem; /* Smaller button text for mobile */
+        padding: 0.5rem 1rem; /* Adjust button padding for mobile */
+    }
+
+    .hero-content {
+        padding: 10px; /* Reduce padding for smaller screens */
     }
 }
 
