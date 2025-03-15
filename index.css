@@ -1,166 +1,205 @@
 /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #000000;
-        }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #000000;
+}
 
-        /* Header and Navigation */
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #007BFF;
-        }
-
-        .login-btn {
-            background-color: #007BFF;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .login-btn:hover {
-            background-color: #0056b3;
-        }
-
-        /* Hamburger Menu for Mobile */
-        #menu-toggle {
-            display: none;
-            font-size: 24px;
-            background: none;
-            border: none;
-            color: #fff;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            #menu-toggle {
-                display: block;
-            }
-
-            nav ul {
-                display: none;
-                flex-direction: column;
-                background-color: #333;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                width: 100%;
-                text-align: center;
-                padding: 10px 0;
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-
-            nav ul li a {
-                padding: 10px 20px;
-                display: block;
-            }
-
-            nav ul li a:hover {
-                background-color: rgba(255, 255, 255, 0.1);
-            }
-
-            .login-btn {
-                padding: 10px 20px;
-                margin: 10px 0;
-            }
-        }
-
-/* Hero Section */
-.hero {
-    background: url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
+/* Header and Navigation */
+header {
+    background-color: #333;
     color: #fff;
-    text-align: center;
-    padding: 100px 20px;
-    animation: fadeIn 2s ease-in-out;
-}
-
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    animation: slideIn 1.5s ease-in-out;
-}
-
-.hero p {
-    font-size: 20px;
-    margin-bottom: 30px;
-    animation: slideIn 2s ease-in-out;
-}
-
-.hero button {
     padding: 10px 20px;
-    font-size: 16px;
-    margin: 0 10px;
-    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #007BFF;
+}
+
+.login-btn {
     background-color: #007BFF;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Hamburger Menu for Mobile */
+#menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
     color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.hero button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-    .hero {
-        padding: 60px 20px;
-    }
-    .hero h1 {
-        font-size: 36px;
-    }
-    .hero p {
-        font-size: 18px;
-    }
-    .hero button {
+    #menu-toggle {
         display: block;
-        margin: 10px auto;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        padding: 10px 20px;
+        display: block;
+    }
+
+    nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .login-btn {
+        padding: 10px 20px;
+        margin: 10px 0;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background-image: url("C:/Users/jeeva/OneDrive/Desktop/Freelance Project/images/rm373batch13-blogbanner-05.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.hero button {
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    background: #007BFF;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero button:hover {
+    background: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .hero button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
     }
 }
 
@@ -280,22 +319,23 @@
         width: 100%;
     }
 }
+
 /* Register Button Styles */
 .register-button {
-    display: inline-block; /* Make it behave like a button */
-    margin-top: 10px; /* Space above the button */
-    padding: 10px 20px; /* Padding inside the button */
-    background-color: #007bff; /* Blue background color */
-    color: white; /* White text color */
-    text-decoration: none; /* Remove underline */
-    border-radius: 4px; /* Rounded corners */
-    font-size: 1em; /* Font size */
-    text-align: center; /* Center text */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1em;
+    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 .register-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
 
 /* About Us */
@@ -512,7 +552,6 @@
     transform: translateY(-2px);
 }
 
-
 /* Testimonials Section */
 .testimonials {
     padding: 20px;
@@ -717,24 +756,25 @@ footer {
     }
 }
 
+/* Chatbot */
 #chatbot-container {
     position: fixed;
-    bottom: -400px; /* Start off-screen */
+    bottom: -400px;
     right: 20px;
     width: 300px;
-    height: 400px; /* Initial height */
+    height: 400px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: bottom 0.3s ease-in-out, height 0.3s ease-in-out; /* Add height transition */
+    transition: bottom 0.3s ease-in-out, height 0.3s ease-in-out;
     z-index: 1000;
-    overflow: hidden; /* Ensure content doesn't overflow */
+    overflow: hidden;
 }
 
 #chatbot-container.active {
-    bottom: 20px; /* Pop up to this position */
-    height: 450px; /* Slightly increase height when active */
+    bottom: 20px;
+    height: 450px;
 }
 
 #chatbot-header {
@@ -762,7 +802,7 @@ footer {
 
 #chatbot-body {
     padding: 10px;
-    height: calc(100% - 60px); /* Adjust height to fit container */
+    height: calc(100% - 60px);
     overflow-y: auto;
 }
 
@@ -837,30 +877,6 @@ footer {
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Animations */
-@keyframes slideInUp {
-    from {
-        transform: translateY(100%);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #chatbot-container {
-        width: 90%;
-        right: 10px;
-        bottom: 10px;
-    }
-
-    #chatbot-toggle-btn {
-        bottom: 10px;
-        right: 10px;
-    }
 }
 
 /* Callback Popup */
