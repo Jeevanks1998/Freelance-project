@@ -139,7 +139,7 @@ nav ul li a:hover {
 .hero-content {
     position: relative;
     z-index: 1;
-    padding: 20px; /* Add padding for better spacing on mobile */
+    padding: 5px; /* Add padding for better spacing on mobile */
 }
 
 .hero h1 {
