@@ -34,12 +34,12 @@ header {
 }
 
 .logo img {
-    height: 50px; /* Adjust the height of the logo for mobile */
+    height: 80px; /* Adjust the height of the logo for mobile */
     width: auto; /* Maintain aspect ratio */
 }
 
 .logo span {
-    font-size: 20px; /* Smaller font size for mobile */
+    font-size: 80px; /* Smaller font size for mobile */
     font-weight: bold;
     color: #fff;
 }
