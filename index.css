@@ -11,7 +11,6 @@ body {
     color: #333;
     background-color: #000000;
 }
-
 /* Header and Navigation */
 header {
     background-color: #333;
@@ -23,16 +22,32 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    height: 80px; /* Fixed height for the header */
 }
 
-header .logo {
-    font-size: 24px;
-    font-weight: bold;
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center; /* Vertically center the logo and text */
+    gap: 10px; /* Space between logo and company name */
 }
 
+.logo img {
+    height: 150px; /* Adjust the height of the logo */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.logo span {
+    font-size: 24px; /* Adjust the font size of the company name */
+    font-weight: bold; /* Make the text bold */
+    color: #fff; /* White text color */
+}
+
+/* Navigation Menu */
 nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
 }
 
 nav ul li {
@@ -71,7 +86,20 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+/* Mobile Responsive Design */
 @media (max-width: 768px) {
+    header {
+        height: 70px; /* Slightly smaller header height for mobile */
+    }
+
+    .logo img {
+        height: 50px; /* Smaller logo for mobile */
+    }
+
+    .logo span {
+        font-size: 18px; /* Smaller font size for mobile */
+    }
+
     #menu-toggle {
         display: block;
     }
@@ -81,7 +109,7 @@ nav ul li a:hover {
         flex-direction: column;
         background-color: #333;
         position: absolute;
-        top: 60px;
+        top: 70px; /* Adjusted to match the header height */
         right: 0;
         width: 100%;
         text-align: center;
@@ -113,11 +141,11 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background-image: url("images/rm373batch13-blogbanner-05.jpg");
-    background-size: cover; /* Ensures the image covers the entire section */
-    background-position: center center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    height: 100vh; /* Full viewport height */
+    background-image: url("C:/Users/jeeva/OneDrive/Desktop/Freelance Project/images/rm373batch13-blogbanner-05.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -126,7 +154,6 @@ nav ul li a:hover {
     position: relative;
 }
 
-/* Overlay to improve text readability */
 .hero::before {
     content: "";
     position: absolute;
@@ -134,7 +161,7 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-content {
@@ -172,11 +199,27 @@ nav ul li a:hover {
     transform: translateY(-3px);
 }
 
-/* Responsive Design for Mobile */
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .hero {
         height: 80vh; /* Adjust height for smaller screens */
-        background-position: center top; /* Adjust background position for mobile */
     }
 
     .hero h1 {
