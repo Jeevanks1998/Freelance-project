@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-});
 
     // Align Download Buttons
     function alignDownloadButtons() {
