@@ -34,14 +34,14 @@ header {
 }
 
 .logo img {
-    height: 150px; /* Adjust the height of the logo */
+    height: 50px; /* Adjust the height of the logo for mobile */
     width: auto; /* Maintain aspect ratio */
 }
 
 .logo span {
-    font-size: 24px; /* Adjust the font size of the company name */
-    font-weight: bold; /* Make the text bold */
-    color: #fff; /* White text color */
+    font-size: 20px; /* Smaller font size for mobile */
+    font-weight: bold;
+    color: #fff;
 }
 
 /* Navigation Menu */
@@ -77,26 +77,16 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
-/* Hamburger Menu Styles */
+/* Hamburger Menu for Mobile */
 #menu-toggle {
     display: none; /* Hide by default on larger screens */
     font-size: 24px;
     background: none;
     border: none;
+    color: #fff;
     cursor: pointer;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul.active {
-    display: block; /* Show menu when active */
-}
-
-/* Responsive Styles */
 @media (max-width: 768px) {
     #menu-toggle {
         display: block; /* Show hamburger icon on smaller screens */
@@ -106,12 +96,29 @@ nav ul.active {
         display: none; /* Hide menu by default on smaller screens */
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 80px; /* Adjust based on header height */
         left: 0;
-        background-color: #f9f9f9;
         width: 100%;
-        padding: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #333;
+        padding: 10px 0;
+    }
+
+    nav ul.active {
+        display: flex; /* Show menu when active */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        padding: 10px 20px;
+        display: block;
+    }
+
+    .login-btn {
+        margin: 10px auto; /* Center the login button */
     }
 }
 
@@ -143,17 +150,17 @@ nav ul.active {
 .hero-content {
     position: relative;
     z-index: 1;
-    padding: 20px; /* Add padding for better spacing on mobile */
+    padding: 20px;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Smaller font size for mobile */
     margin-bottom: 1rem;
     animation: fadeIn 1.5s ease-in-out;
 }
 
 .hero p {
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Smaller font size for mobile */
     margin-bottom: 2rem;
     animation: fadeInUp 1s ease-in-out;
 }
@@ -175,24 +182,6 @@ nav ul.active {
     transform: translateY(-3px);
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
     .hero {
         height: 80vh; /* Adjust height for smaller screens */
@@ -203,16 +192,12 @@ nav ul.active {
     }
 
     .hero p {
-        font-size: 1.2rem; /* Smaller font size for mobile */
+        font-size: 1rem; /* Smaller font size for mobile */
     }
 
     .hero button {
         font-size: 0.9rem; /* Smaller button text for mobile */
         padding: 0.5rem 1rem; /* Adjust button padding for mobile */
-    }
-
-    .hero-content {
-        padding: 10px; /* Reduce padding for smaller screens */
     }
 }
 
@@ -248,6 +233,7 @@ nav ul.active {
 @media (max-width: 768px) {
     .quick-links {
         flex-direction: column;
+        gap: 10px;
     }
 }
 
@@ -261,7 +247,7 @@ nav ul.active {
 
 .highlights h2 {
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 2rem; /* Smaller font size for mobile */
 }
 
 .highlight-cards {
@@ -288,7 +274,7 @@ nav ul.active {
 
 @media (max-width: 768px) {
     .highlight-cards .card {
-        width: 100%;
+        width: 100%; /* Full width on mobile */
     }
 }
 
@@ -302,7 +288,7 @@ nav ul.active {
 
 .news h2 {
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 2rem; /* Smaller font size for mobile */
 }
 
 .news-item {
@@ -329,7 +315,7 @@ nav ul.active {
 
 @media (max-width: 768px) {
     .news-item {
-        width: 100%;
+        width: 100%; /* Full width on mobile */
     }
 }
 
@@ -361,7 +347,7 @@ nav ul.active {
 
 .about h2 {
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 2rem; /* Smaller font size for mobile */
 }
 
 .metrics {
@@ -387,7 +373,7 @@ nav ul.active {
 
 @media (max-width: 768px) {
     .metrics .metric {
-        width: 100%;
+        width: 100%; /* Full width on mobile */
     }
 }
 
@@ -401,7 +387,7 @@ nav ul.active {
 
 .courses h2 {
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 2rem; /* Smaller font size for mobile */
 }
 
 .course-list {
@@ -464,7 +450,7 @@ nav ul.active {
 
 @media (max-width: 768px) {
     .course {
-        width: 100%;
+        width: 100%; /* Full width on mobile */
     }
 }
 
@@ -478,7 +464,7 @@ nav ul.active {
 
 .batches h2 {
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 2rem; /* Smaller font size for mobile */
 }
 
 .batch-list {
@@ -529,7 +515,7 @@ nav ul.active {
 
 @media (max-width: 768px) {
     .batch {
-        width: 100%;
+        width: 100%; /* Full width on mobile */
     }
 }
 
@@ -575,7 +561,7 @@ nav ul.active {
 
 .testimonials h2 {
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 2rem; /* Smaller font size for mobile */
 }
 
 .testimonial-slider {
@@ -632,7 +618,7 @@ nav ul.active {
 
 .placements h2 {
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 2rem; /* Smaller font size for mobile */
 }
 
 .placement-stats {
@@ -704,7 +690,7 @@ nav ul.active {
 
 .contact h2 {
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 2rem; /* Smaller font size for mobile */
 }
 
 #contact-form {
