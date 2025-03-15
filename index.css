@@ -173,7 +173,7 @@ nav ul li a:hover {
 }
 
 /* Responsive Design for Mobile */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
     .hero {
         height: 80vh; /* Adjust height for smaller screens */
         background-position: center top; /* Adjust background position for mobile */
