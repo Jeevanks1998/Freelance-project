@@ -196,6 +196,7 @@ nav ul li a:hover {
         padding: 10px; /* Reduce padding for smaller screens */
     }
 }
+
 /* Quick Links */
 .quick-links {
     display: flex;
