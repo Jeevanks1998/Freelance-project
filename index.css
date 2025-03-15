@@ -11,6 +11,7 @@ body {
     color: #333;
     background-color: #000000;
 }
+
 /* Header and Navigation */
 header {
     background-color: #333;
@@ -101,41 +102,43 @@ nav ul li a:hover {
     }
 
     #menu-toggle {
-        display: block;
+        display: block; /* Show the hamburger button */
     }
 
     nav ul {
-        display: none;
+        display: none; /* Hide the menu by default */
         flex-direction: column;
         background-color: #333;
         position: absolute;
-        top: 70px; /* Adjusted to match the header height */
+        top: 70px; /* Position below the header */
         right: 0;
-        width: 100%;
+        width: 100%; /* Full width for the menu */
         text-align: center;
         padding: 10px 0;
+        border-radius: 0 0 0 8px; /* Rounded corners */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     }
 
     nav ul.active {
-        display: flex;
+        display: flex; /* Show the menu when active */
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin: 10px 0; /* Add margin for spacing */
     }
 
     nav ul li a {
-        padding: 10px 20px;
-        display: block;
+        padding: 10px 20px; /* Add padding to links */
+        display: block; /* Make links block-level for full clickable area */
     }
 
     nav ul li a:hover {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
     }
 
     .login-btn {
-        padding: 10px 20px;
-        margin: 10px 0;
+        padding: 10px 20px; /* Adjust padding for the login button */
+        margin: 10px 0; /* Add margin for spacing */
     }
 }
 
