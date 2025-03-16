@@ -72,11 +72,12 @@ nav ul li a:hover {
     border: none;
     color: #fff;
     cursor: pointer;
+    order: 4; /* Hamburger button comes last */
 }
 
 @media (max-width: 768px) {
     #menu-toggle {
-        display: block;
+        display: block; /* Show hamburger button on mobile */
     }
 
     nav ul {
