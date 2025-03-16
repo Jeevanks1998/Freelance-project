@@ -299,6 +299,22 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
+.news-item .register-now-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-left: auto;
+}
+
+.news-item .register-now-btn:hover {
+    background-color: #0056b3;
+}
+
 @media (max-width: 768px) {
     .news-item {
         width: 100%;
@@ -908,6 +924,23 @@ footer {
     color: #007BFF;
 }
 
+/* Talk to a Learning Consultant Button */
+.talk-to-consultant-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.talk-to-consultant-btn:hover {
+    background-color: #0056b3;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -926,5 +959,62 @@ footer {
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+/* Register Now Button */
+.register-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    margin-right: 10px; /* Space between buttons */
+}
+
+.register-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.register-button:active {
+    transform: translateY(0);
+}
+
+/* Talk to a Learning Consultant Button */
+button[onclick*="tel:"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745; /* Green color for distinction */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button[onclick*="tel:"]:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px);
+}
+
+button[onclick*="tel:"]:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .register-button,
+    button[onclick*="tel:"] {
+        width: 100%;
+        margin-bottom: 10px; /* Stack buttons vertically on small screens */
+        text-align: center;
     }
 }
