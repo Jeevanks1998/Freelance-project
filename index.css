@@ -33,6 +33,9 @@ header .logo {
 nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -280,22 +283,23 @@ nav ul li a:hover {
         width: 100%;
     }
 }
+
 /* Register Button Styles */
 .register-button {
-    display: inline-block; /* Make it behave like a button */
-    margin-top: 10px; /* Space above the button */
-    padding: 10px 20px; /* Padding inside the button */
-    background-color: #007bff; /* Blue background color */
-    color: white; /* White text color */
-    text-decoration: none; /* Remove underline */
-    border-radius: 4px; /* Rounded corners */
-    font-size: 1em; /* Font size */
-    text-align: center; /* Center text */
-    transition: background-color 0.3s ease; /* Smooth hover effect */
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 1em;
+    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 .register-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
 
 /* About Us */
@@ -512,7 +516,6 @@ nav ul li a:hover {
     transform: translateY(-2px);
 }
 
-
 /* Testimonials Section */
 .testimonials {
     padding: 20px;
@@ -717,6 +720,7 @@ footer {
     }
 }
 
+/* Chatbot */
 #chatbot-container {
     position: fixed;
     bottom: -400px; /* Start off-screen */
