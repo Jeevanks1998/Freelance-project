@@ -161,15 +161,14 @@ document.addEventListener('DOMContentLoaded', function () {
         link.click();
         document.body.removeChild(link);
     }
-});
-// Chatbot Toggle
-document.getElementById('chatbot-toggle-btn').addEventListener('click', function () {
-    const chatbotContainer = document.getElementById('chatbot-container');
-    chatbotContainer.classList.toggle('active');
-});
 
-// Close Chatbot
-document.getElementById('close-chatbot').addEventListener('click', function () {
-    const chatbotContainer = document.getElementById('chatbot-container');
-    chatbotContainer.classList.remove('active');
+    // Open Chatbot on Key Press
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'c' || event.key === 'C') {
+            const chatbotContainer = document.getElementById('chatbot-container');
+            if (chatbotContainer) {
+                chatbotContainer.classList.toggle('active');
+            }
+        }
+    });
 });
