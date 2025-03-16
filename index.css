@@ -66,18 +66,19 @@ nav ul li a:hover {
 
 /* Hamburger Menu for Mobile */
 #menu-toggle {
-    display: none;
+    display: none; /* Hidden by default */
     font-size: 24px;
     background: none;
     border: none;
     color: #fff;
     cursor: pointer;
-    order: 4; /* Hamburger button comes last */
+    padding: 10px; /* Add padding for better touch area */
+    margin-left: auto; /* Push the button to the right */
 }
 
 @media (max-width: 768px) {
     #menu-toggle {
-        display: block; /* Show hamburger button on mobile */
+        display: block; /* Show the hamburger button in mobile view */
     }
 
     nav ul {
@@ -85,7 +86,7 @@ nav ul li a:hover {
         flex-direction: column;
         background-color: #333;
         position: absolute;
-        top: 60px;
+        top: 60px; /* Adjust based on header height */
         right: 0;
         width: 100%;
         text-align: center;
@@ -114,7 +115,6 @@ nav ul li a:hover {
         margin: 10px 0;
     }
 }
-
 /* Hero Section */
 .hero {
     background-image: url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600'); /* Updated AI-related background image */
