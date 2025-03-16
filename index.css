@@ -31,16 +31,15 @@ header {
     display: flex;
     align-items: center; /* Vertically center the logo and text */
     gap: 10px; /* Space between logo and company name */
-    height: 100%; /* Ensure the logo container takes full height of the header */
 }
 
 .logo img {
-    height: 60px; /* Adjust the height of the logo to fit within the header */
+    height: 50px; /* Reduced height for mobile */
     width: auto; /* Maintain aspect ratio */
 }
 
 .logo span {
-    font-size: 24px; /* Adjust font size to fit within the header */
+    font-size: 18px; /* Smaller font size for mobile */
     font-weight: bold;
     color: #fff;
 }
@@ -50,8 +49,6 @@ nav ul {
     list-style: none;
     display: flex;
     align-items: center;
-    margin: 0;
-    padding: 0;
 }
 
 nav ul li {
@@ -91,6 +88,14 @@ nav ul li a:hover {
 }
 
 @media (max-width: 768px) {
+    .logo img {
+        height: 40px; /* Further reduce logo size for mobile */
+    }
+
+    .logo span {
+        font-size: 16px; /* Further reduce font size for mobile */
+    }
+
     #menu-toggle {
         display: block; /* Show hamburger icon on smaller screens */
     }
@@ -127,7 +132,7 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background-image: url("images/rm373batch13-blogbanner-05.jpg");
+    background-image: url("C:/Users/jeeva/OneDrive/Desktop/Freelance Project/images/rm373batch13-blogbanner-05.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -188,6 +193,7 @@ nav ul li a:hover {
 @media (max-width: 768px) {
     .hero {
         height: 80vh; /* Adjust height for smaller screens */
+        background-image: url("C:/Users/jeeva/OneDrive/Desktop/Freelance Project/images/rm373batch13-blogbanner-05-mobile.jpg"); /* Mobile-specific image */
     }
 
     .hero h1 {
