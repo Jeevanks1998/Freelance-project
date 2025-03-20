@@ -64,6 +64,7 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
+
 /* Hamburger Menu for Mobile */
 #menu-toggle {
     display: none; /* Hidden by default */
@@ -115,6 +116,7 @@ nav ul li a:hover {
         margin: 10px 0;
     }
 }
+
 /* Hero Section */
 .hero {
     background-image: url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600'); /* Updated AI-related background image */
@@ -225,43 +227,76 @@ nav ul li a:hover {
     }
 }
 
-/* Highlights */
+/* Highlights Section Styling */
 .highlights {
-    padding: 20px;
+    padding: 40px 20px;
     text-align: center;
-    background-color: #f4f4f4;
-    animation: fadeIn 2s ease-in-out;
+    background-color: #f9f9f9;
 }
 
 .highlights h2 {
-    margin-bottom: 20px;
     font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.highlights p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
 }
 
 .highlight-cards {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 }
 
-.highlight-cards .card {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 200px;
+.card {
+    background-color: #0e73ff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px; /* Fixed width for small cards */
+    height: 100px; /* Fixed height for small cards */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    transition: transform 0.3s ease;
+    font-size: 1rem;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.highlight-cards .card:hover {
-    transform: translateY(-10px);
+.card:hover {
+    transform: translateY(-10px); /* Lift the card on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
-    .highlight-cards .card {
-        width: 100%;
+    .card {
+        width: 120px; /* Smaller cards for mobile */
+        height: 120px;
+        font-size: 0.9rem;
+    }
+
+    .highlights h2 {
+        font-size: 1.5rem;
+    }
+
+    .highlights p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100px; /* Even smaller cards for very small screens */
+        height: 100px;
+        font-size: 0.8rem;
     }
 }
 
@@ -345,9 +380,9 @@ nav ul li a:hover {
 .metrics .metric {
     background-color: #007BFF;
     color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 200px;
+    padding: 10px;
+    border-radius: 6px;
+    width: 150px;
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -647,7 +682,7 @@ nav ul li a:hover {
 
 #contact-form input,
 #contact-form textarea {
-    width: 80%;
+    width: 50%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -1018,4 +1053,45 @@ button[onclick*="tel:"]:active {
         margin-bottom: 10px; /* Stack buttons vertically on small screens */
         text-align: center;
     }
+}
+
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #0073b1; /* LinkedIn Blue */
+}
+
+.social-links a:hover .fa-instagram {
+    color: #e4405f; /* Instagram Pink */
+}
+
+.social-links a:hover .fa-whatsapp {
+    color: #25d366; /* WhatsApp Green */
+}
+
+.social-links a:hover .fa-twitter {
+    color: #1da1f2; /* Twitter Blue */
+}
+
+.social-links a:hover .fa-facebook {
+    color: #1877f2; /* Facebook Blue */
 }
