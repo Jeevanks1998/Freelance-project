@@ -17,230 +17,280 @@
     </script>
 </head>
 <body>
-    <!-- Header and Navigation -->
     <header>
         <div class="logo">Complete Analytics</div>
-        <button id="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
         <nav>
             <ul id="menu">
-                <li><a href="#home" class="login-btn">Home</a></li>
-                <li><a href="#about" class="login-btn">About Us</a></li>
-                <li><a href="#courses" class="login-btn">Courses</a></li>
-                <li><a href='services.html' class="login-btn">Project Services</a></li>
-                <li><a href="#placements" class="login-btn">Placements</a></li>
-                <li><a href="#contact" class="login-btn">Contact Us</a></li>
-                <li><a href='syllabus.html' class="login-btn">Syllabus</a></li>
-                <li><a href='admin.html' class="login-btn">Admin</a></li>
+                <!-- Products & Services -->
+                <li>
+                    <div class="dropdown">
+                        <a href="#">Products & Services <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href='services.html' target="_blank">Project Services</a>
+                            <a href='product.html' target="_blank">Product Services</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Courses -->
+                <li><a href='courses.html' target="_blank">Courses</a></li>
+                <!-- Push Careers, About Us, and Contact Us to the right -->
+                <li class="push-right"><a href='carrers.html' target="_blank">Careers</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
+        <button id="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
     </header>
 
- <!-- Hero Section -->
-<section id="home" class="hero">
+<!-- Background Elements -->
+<div class="bg-circle circle-1"></div>
+<div class="bg-circle circle-2"></div>
+<div class="bg-circle circle-3"></div>
+<div class="bg-circle circle-4"></div>
+
+<div class="particles" id="particles-js"></div>
+
+<!-- Hero Section -->
+<section class="hero">
     <div class="hero-content">
-        <h1>We Provide Professional Project Services</h1>
-        <h2>and</h2>
-        <h1>Empowering Your Future with Expert Learning</h1>
-        <p>Join us to transform your career with our industry-aligned courses.</p>
-        <p>We also offer expert project services tailored to help clients achieve their goals efficiently and effectively.</p>
-        <p>Empowering students and professionals alike to reach their full potential through innovative learning and practical solutions.</p>
-        <button onclick="window.location.href='#courses';">Explore Courses</button>
-        <button onclick="window.location.href='register.html';">Register Now</button>
-        <button onclick="window.location.href='https://g.co/kgs/De7WtpT';">Give Review</button>
-        <button onclick="window.location.href='services.html';">Project Services</button>
+        <!-- Slide 1 - Transforming Ideas -->
+        <div class="slide-container active">
+            <div class="slide-text">
+                <h1>Transforming Ideas into Reality</h1>
+                <p>We specialize in delivering end-to-end project solutions and creating cutting-edge products that drive business success.</p>
+                <a href="#" class="btn">Learn more</a>
+            </div>
+            <div class="slide-image-container">
+                <div class="slide-image-wrapper">
+                    <div class="decorative-shape"></div>
+                    <img class="slide-image" src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Team working on project">
+                    <div class="icon-checkmark"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 2 - Project Services -->
+        <div class="slide-container">
+            <div class="slide-text">
+                <h1>Expert Project Services & Innovative Product Development</h1>
+                <p>Whether you need professional project management or innovative product development, we are here to help you achieve your goals.</p>
+                <a href="#" class="btn">Discover More</a>
+            </div>
+            <div class="slide-image-container">
+                <div class="slide-image-wrapper">
+                    <div class="decorative-shape"></div>
+                    <img class="slide-image" src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Product development team">
+                    <div class="icon-checkmark"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3 - Expert Learning -->
+        <div class="slide-container">
+            <div class="slide-text">
+                <h1>Empowering Your Future with Expert Learning</h1>
+                <p>Join us to transform your career with our industry-aligned courses.</p>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+            <div class="slide-image-container">
+                <div class="slide-image-wrapper">
+                    <div class="decorative-shape"></div>
+                    <img class="slide-image" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Group learning session">
+                    <div class="icon-checkmark"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Navigation Dots -->
+    <div class="slider-nav">
+        <div class="slider-dot active" data-index="0"></div>
+        <div class="slider-dot" data-index="1"></div>
+        <div class="slider-dot" data-index="2"></div>
     </div>
 </section>
-    <!-- Quick Links -->
-    <section class="quick-links">
-        <div class="link"><a href="#courses"><i class="fas fa-book"></i>Courses</a></div>
-        <div class="link"><a href="#batches"><i class="fas fa-users"></i>Batches</a></div>
-        <div class="link"><a href="#placements"><i class="fas fa-briefcase"></i>Placements</a></div>
-        <div class="link"><a href="services.html"><i class="fas fa-handshake"></i>Services</a></div>
-    </section>
+
+<!-- Quick Links Section - Text Version -->
+<section class="quick-links-text">
+    <div class="quick-links-container">
+        <h1>Quick Links</h1>
+        <div class="quick-links-list">
+            <ul>
+                <li><a href="product.html"><i class="fas fa-cube"></i> Products</a></li>
+                <li><a href="services.html"><i class="fas fa-project-diagram"></i> Projects</a></li>
+                <li><a href="courses.html"><i class="fas fa-graduation-cap"></i> Courses</a></li>
+                <li><a href="carrers.html"><i class="fas fa-briefcase"></i> Careers</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+    
 
     <!-- Highlights -->
     <section class="highlights">
         <h2>Why Choose Us?</h2>
-        <p>We also provide professional project services to help clients achieve their goals.</p>
+        <p>We provide tailored solutions to meet your unique business needs.</p>
         <div class="highlight-cards">
-            <div class="card">100% Placement Assistance</div>
-            <div class="card">Certified Trainers</div>
-            <div class="card">Hands-on Projects</div>
-            <div class="card">Industry-Aligned Curriculum</div>
-            <div class="card">Professional Project Services for Clients</div>
+            <div class="card">End-to-End Project Management</div>
+            <div class="card">Innovative Product Design</div>
+            <div class="card">Expert Team of Professionals</div>
+            <div class="card">Timely Delivery & Quality Assurance</div>
+            <div class="card">Customized Solutions for Every Client</div>
         </div>
     </section>
 
-    <!-- News/Updates -->
-    <section class="news">
-        <h2>News & Updates</h2>
+    <!-- News/Updates Section -->
+<section class="news">
+    <h2>News & Updates</h2>
+    <div class="news-container">
         <div class="news-item">
-            <i class="fas fa-bullhorn"></i>
-            <p>New Batch Starting Soon!</p>
+            <i class="fas fa-rocket"></i>
+            <div class="news-content">
+                <h3>Product Launch</h3>
+                <p>Our new AI-powered analytics tool launches next week!</p>
+            </div>
         </div>
+        
         <div class="news-item">
-            <i class="fas fa-calendar-check"></i>
-            <p>Placement Drive on 15th November</p>
-            <a href="drive.html" class="register-button">Register Now</a>
+            <i class="fas fa-calendar-alt"></i>
+            <div class="news-content">
+                <h3>Workshop</h3>
+                <p>Join our Project Management Workshop on November 20th</p>
+            </div>
         </div>
-    </section>
+        
+        <div class="news-item">
+            <i class="fas fa-code-branch"></i>
+            <div class="news-content">
+                <h3>New Feature</h3>
+                <p>Version 3.2 with enhanced collaboration tools now available</p>
+            </div>
+        </div>
+        
+        <div class="news-item">
+            <i class="fas fa-trophy"></i>
+            <div class="news-content">
+                <h3>Award</h3>
+                <p>We won "Best Innovation 2023" at Tech Excellence Awards</p>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- About Us -->
     <section id="about" class="about">
-        <h2>About Us</h2>
-        <p>Our mission is to provide quality education and empower students to achieve their career goals.</p>
-        <div class="metrics">
-            <div class="metric">10,000+ Students Trained</div>
-            <div class="metric">95% Placement Rate</div>
-            <div class="metric">50+ Hiring Partners</div>
-        </div>
-    </section>
-
-    <!-- Courses -->
-    <section id="courses" class="courses">
-        <h2>Our Courses</h2>
-        <div class="course-list">
-            <div class="course">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Full Stack Development</h3>
-                <p>Duration: 6 months | Fees: 25000</p>
-                <p>Description: Learn front-end and back-end development with hands-on projects.</p>
-                <p>Syllabus: HTML/CSS, JavaScript, Node.js, React, MongoDB</p>
-                <p>Prerequisites: Basic programming knowledge</p>
-                <button onclick="window.location.href='register.html?course=Full Stack Development'">Register</button>
-            </div>
-            <div class="course">
-                <i class="fas fa-chart-line"></i>
-                <h3>Data Science</h3>
-                <p>Duration: 8 months | Fees: 26000</p>
-                <p>Description: Master data analysis, machine learning, and data visualization.</p>
-                <p>Syllabus: Python, Pandas, NumPy, Machine Learning, Data Visualization</p>
-                <p>Prerequisites: Basic statistics and programming</p>
-                <button onclick="window.location.href='register.html?course=Data Science'">Register</button>
-            </div>
-            <div class="course">
-                <i class="fas fa-bullhorn"></i>
-                <h3>Digital Marketing</h3>
-                <p>Duration: 4 months | Fees: 15000</p>
-                <p>Description: Learn SEO, SEM, social media marketing, and analytics.</p>
-                <p>Syllabus: SEO, Google Ads, Social Media Marketing, Content Marketing</p>
-                <p>Prerequisites: No prior experience required</p>
-                <button onclick="window.location.href='register.html?course=Digital Marketing'">Register</button>
-            </div>
-            <div class="course">
-                <i class="fas fa-cloud"></i>
-                <h3>Cloud Computing</h3>
-                <p>Duration: 5 months | Fees: 25000</p>
-                <p>Description: Understand cloud platforms like AWS, Azure, and Google Cloud.</p>
-                <p>Syllabus: AWS, Azure, Google Cloud, DevOps</p>
-                <p>Prerequisites: Basic IT knowledge</p>
-                <button onclick="window.location.href='register.html?course=Cloud Computing'">Register</button>
-            </div>
-            <div class="course">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Cybersecurity</h3>
-                <p>Duration: 7 months | Fees: 30000</p>
-                <p>Description: Learn ethical hacking, network security, and cryptography.</p>
-                <p>Syllabus: Ethical Hacking, Network Security, Cryptography, Penetration Testing</p>
-                <p>Prerequisites: Basic networking knowledge</p>
-                <button onclick="window.location.href='register.html?course=Cybersecurity'">Register</button>
-            </div>
-            <!-- New Courses -->
-            <div class="course">
-                <i class="fab fa-python"></i>
-                <h3>Python Programming</h3>
-                <p>Duration: 3 months | Fees: 23000</p>
-                <p>Description: Learn Python from scratch and build real-world applications.</p>
-                <p>Syllabus: Python Basics, OOP, Data Structures, Flask/Django</p>
-                <p>Prerequisites: No prior experience required</p>
-                <button onclick="window.location.href='register.html?course=Python'">Register</button>
-            </div>
-            <div class="course">
-                <i class="fas fa-brain"></i>
-                <h3>Machine Learning</h3>
-                <p>Duration: 6 months | Fees: 35000</p>
-                <p>Description: Master machine learning algorithms and techniques.</p>
-                <p>Syllabus: Supervised Learning, Unsupervised Learning, Neural Networks</p>
-                <p>Prerequisites: Python and basic statistics</p>
-                <button onclick="window.location.href='register.html?course=Machine Learning'">Register</button>
-            </div>
-            <div class="course">
-                <i class="fas fa-robot"></i>
-                <h3>Artificial Intelligence</h3>
-                <p>Duration: 7 months | Fees: 30000</p>
-                <p>Description: Explore AI concepts like NLP, computer vision, and robotics.</p>
-                <p>Syllabus: AI Basics, NLP, Computer Vision, Reinforcement Learning</p>
-                <p>Prerequisites: Python and machine learning basics</p>
-                <button onclick="window.location.href='register.html?course=Artificial Intelligence'">Register</button>
+        <div class="container">
+            <h2 class="animate-fade-in">About Us</h2>
+            <p class="mission animate-fade-in" style="animation-delay: 0.2s;">Our mission is to deliver exceptional project services and innovative product development solutions that empower businesses to thrive.</p>
+            
+            <div class="about-content">
+                <div class="about-text animate-slide-left">
+                    <p class="dedicated">Dedicated to delivering end-to-end AI, ML, and Generative AI solutions tailored to solve complex analytics challenges across industries.</p>
+                    
+                    <div class="objectives">
+                        <h3>Our Objectives</h3>
+                        <ul>
+                            <li class="animate-list-item" style="--i:1">Empower businesses with data-driven intelligence that enhances decision-making, efficiency, and innovation.</li>
+                            <li class="animate-list-item" style="--i:2">Specialize in designing and deploying custom AI/ML models that provide actionable insights and future-ready strategies.</li>
+                            <li class="animate-list-item" style="--i:3">Committed to nurturing the next generation of AI talent through advanced training programs in AI, ML, and GenAI.</li>
+                            <li class="animate-list-item" style="--i:4">At DhishaAI, we aim to lead the AI transformation journey with precision, purpose, and people-centric innovation.</li>
+                            <li class="animate-list-item" style="--i:5">At DhishaAI, we aim to lead the AI revolution with impactful solutions, continuous learning, and innovation-driven product development.</li>
+                            <li class="animate-list-item" style="--i:6">Continuously innovate to build proprietary tools and frameworks that accelerate deployment, improve model performance, and ensure enterprise-grade reliability.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="metrics animate-slide-right">
+                    <div class="metric-box">
+                        <span class="metric-number">100+</span>
+                        <span class="metric-text">Successful Projects</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-number">50+</span>
+                        <span class="metric-text">Innovative Products Developed</span>
+                    </div>
+                    <div class="metric-box">
+                        <span class="metric-number">95%</span>
+                        <span class="metric-text">Client Satisfaction Rate</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Batches -->
-    <!-- Batches -->
-<section id="batches" class="batches">
-    <h2>Upcoming Batches</h2>
-    <div class="batch-list">
-        <div class="batch">
-            <i class="fas fa-laptop-code"></i>
-            <h3>Full Stack Development</h3>
-            <p>Start Date: 1st November | Mode: Offline</p>
-            <button onclick="window.location.href='register.html?course=Full Stack Development'">Register</button>
+     <!-- We Offer Services Section -->
+<section id="we-offer-services" class="we-offer-services">
+    <h2>We Offer Services</h2>
+    <div class="services-container">
+        <!-- Project Services -->
+        <div class="service-item">
+            <i class="fas fa-handshake service-icon"></i>
+            <h3>Project Services</h3>
+            <p>Our <strong>Project Services</strong> are designed to help businesses achieve their goals through efficient and effective project management. We provide:</p>
+            <ul>
+                <li><strong>End-to-End Project Management:</strong> From planning to execution, we handle every aspect of your project to ensure timely delivery and success.</li>
+                <li><strong>Customized Solutions:</strong> Tailored strategies to meet your unique business needs and objectives.</li>
+                <li><strong>Risk Management:</strong> Proactive identification and mitigation of potential risks to keep your project on track.</li>
+                <li><strong>Resource Optimization:</strong> Efficient allocation and management of resources to maximize productivity and minimize costs.</li>
+                <li><strong>Post-Project Support:</strong> Ongoing maintenance and support to ensure long-term success and sustainability.</li>
+                <li><strong>Agile Methodologies:</strong> Implementing Agile practices to enhance flexibility and adaptability in project execution.</li>
+                <li><strong>Stakeholder Collaboration:</strong> Facilitating seamless communication and collaboration among all stakeholders for better decision-making.</li>
+            </ul>
         </div>
-        <div class="batch">
-            <i class="fas fa-chart-line"></i>
-            <h3>Data Science</h3>
-            <p>Start Date: 5th November | Mode: Offline</p>
-            <button onclick="window.location.href='register.html?course=Data Science'">Register</button>
-        </div>
-        <div class="batch">
-            <i class="fas fa-bullhorn"></i>
-            <h3>Digital Marketing</h3>
-            <p>Start Date: 10th November | Mode: Offline</p>
-            <button onclick="window.location.href='register.html?course=Digital Marketing'">Register</button>
-        </div>
-        <div class="batch">
-            <i class="fas fa-cloud"></i>
-            <h3>Cloud Computing</h3>
-            <p>Start Date: 15th November | Mode: Offline</p>
-            <button onclick="window.location.href='register.html?course=Cloud Computing'">Register</button>
-        </div>
-        <div class="batch">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Cybersecurity</h3>
-            <p>Start Date: 20th November | Mode: Offline</p>
-            <button onclick="window.location.href='register.html?course=Cybersecurity'">Register</button>
-        </div>
-        <!-- New Batches -->
-        <div class="batch">
-            <i class="fab fa-python"></i>
-            <h3>Python Programming</h3>
-            <p>Start Date: 25th November | Mode: Offline</p>
-            <button onclick="window.location.href='register.html?course=Python'">Register</button>
-        </div>
-        <div class="batch">
-            <i class="fas fa-brain"></i>
-            <h3>Machine Learning</h3>
-            <p>Start Date: 30th November | Mode: Offline</p>
-            <button onclick="window.location.href='register.html?course=Machine Learning'">Register</button>
-        </div>
-        <div class="batch">
-            <i class="fas fa-robot"></i>
-            <h3>Artificial Intelligence</h3>
-            <p>Start Date: 5th December | Mode: Online</p>
-            <button onclick="window.location.href='register.html?course=Artificial Intelligence'">Register</button>
-        </div>
-    </div>
 
-    <!-- Got Questions Section -->
-    <div class="got-questions">
-        <p>Got questions regarding upcoming batch dates?</p>
-        <button onclick="window.location.href='tel:+919886096090'">Talk to a Learning Consultant</button>
+        <!-- Product Development -->
+        <div class="service-item">
+            <i class="fas fa-cogs service-icon"></i>
+            <h3>Product Development</h3>
+            <p>Our <strong>Product Development</strong> services focus on creating innovative and market-ready products that stand out. We offer:</p>
+            <ul>
+                <li><strong>Ideation & Conceptualization:</strong> Transforming your ideas into actionable product concepts with clear market potential.</li>
+                <li><strong>Prototyping & Design:</strong> Developing prototypes and designs that align with user needs and business goals.</li>
+                <li><strong>Development & Testing:</strong> Building robust products with rigorous testing to ensure quality and reliability.</li>
+                <li><strong>Market Launch Strategy:</strong> Crafting effective go-to-market strategies to maximize product success.</li>
+                <li><strong>Post-Launch Support:</strong> Continuous updates and improvements to keep your product competitive and relevant.</li>
+                <li><strong>User Experience (UX) Design:</strong> Creating intuitive and user-friendly interfaces to enhance customer satisfaction.</li>
+                <li><strong>Scalability Planning:</strong> Ensuring your product can grow and adapt to increasing demands and market changes.</li>
+            </ul>
+        </div>
+
+        <!-- Courses -->
+        <div class="service-item">
+            <i class="fas fa-book service-icon"></i>
+            <h3>Courses</h3>
+            <p>Our <strong>Courses</strong> are designed to empower individuals and teams with the latest skills and knowledge. We provide:</p>
+            <ul>
+                <li><strong>Full Stack Development:</strong> Master front-end and back-end technologies to build complete web applications.</li>
+                <li><strong>Data Science & Machine Learning:</strong> Learn to analyze data and build intelligent systems using cutting-edge tools and techniques.</li>
+                <li><strong>Cloud Computing & DevOps:</strong> Gain expertise in cloud platforms and DevOps practices to streamline software delivery.</li>
+                <li><strong>Digital Marketing:</strong> Understand SEO, SEM, and social media strategies to drive business growth.</li>
+                <li><strong>Cybersecurity:</strong> Develop skills to protect systems and data from cyber threats.</li>
+                <li><strong>UI/UX Design:</strong> Learn the principles of designing user-friendly and visually appealing interfaces.</li>
+                <li><strong>Business Analytics:</strong> Gain insights into data-driven decision-making and business intelligence tools.</li>
+            </ul>
+        </div>
+
+        <!-- Consulting Services -->
+        <div class="service-item">
+            <i class="fas fa-chart-line service-icon"></i>
+            <h3>Consulting Services</h3>
+            <p>Our <strong>Consulting Services</strong> are tailored to help businesses optimize their operations and achieve strategic goals. We offer:</p>
+            <ul>
+                <li><strong>Business Strategy Consulting:</strong> Developing actionable strategies to drive growth and profitability.</li>
+                <li><strong>Digital Transformation:</strong> Guiding businesses through the adoption of digital technologies to enhance efficiency and innovation.</li>
+                <li><strong>Process Optimization:</strong> Streamlining workflows and processes to improve productivity and reduce costs.</li>
+                <li><strong>Change Management:</strong> Supporting organizations in managing transitions and implementing new initiatives effectively.</li>
+                <li><strong>Technology Consulting:</strong> Advising on the best technologies and tools to meet your business needs.</li>
+                <li><strong>Financial Consulting:</strong> Providing insights into financial planning, budgeting, and investment strategies.</li>
+                <li><strong>Market Research & Analysis:</strong> Conducting in-depth research to identify market trends and opportunities.</li>
+            </ul>
+        </div>
     </div>
 </section>
-   <!-- Testimonials -->
+
+<!-- Testimonials -->
 <section id="testimonials" class="testimonials">
-    <h2>Student Testimonials</h2>
+    <h2>Testimonials</h2>
     <div class="testimonial-slider">
         <div class="slider-track">
             <!-- Testimonial 1 -->
@@ -296,96 +346,107 @@
         </div>
     </div>
 
-    <!-- Placements -->
-    <section id="placements" class="placements">
-        <h2>Placements</h2>
-        <div class="placement-stats">
-            <p>Placement Rate: 95%</p>
-            <div class="company-slider">
-                <div class="slider-track">
-                    <div class="slide">Google</div>
-                    <div class="slide">Amazon</div>
-                    <div class="slide">Microsoft</div>
-                    <div class="slide">Infosys</div>
-                    <div class="slide">TCS</div>
-                    <div class="slide">Wipro</div>
-                    <div class="slide">Accenture</div>
-                    <div class="slide">IBM</div>
-                    <div class="slide">Capgemini</div>
-                    <div class="slide">Cognizant</div>
-                    <div class="slide">HCL</div>
-                    <div class="slide">Deloitte</div>
-                    <div class="slide">Oracle</div>
-                    <div class="slide">Intel</div>
-                    <div class="slide">Adobe</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact Us -->
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <form id="contact-form">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <div class="address-container">
+        <div class="address">
+            <h3>Complete Analytics Project Services</h3>
+            <p>123 Project Street, Suite 456</p>
+            <p>Tech City, TX 75001</p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <p>Email: projects@completeanalytics.com</p>
+        </div>
+        <div class="address">
+            <h3>Complete Analytics Courses</h3>
+            <p>456 Learning Avenue, Suite 789</p>
+            <p>Education Town, TX 75002</p>
+            <p>Phone: +1 (987) 654-3210</p>
+            <p>Email: courses@completeanalytics.com</p>
+        </div>
+    </div>
+</section>
 
     <!-- Footer -->
-<footer>
-    <p>© 2025 Complete Analytics. All rights reserved. Designed By Jeevan K S</p>
-    <div class="social-links">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a> <!-- Twitter Icon -->
-        <a href="#"><i class="fab fa-facebook"></i></a> <!-- Facebook Icon -->
-    </div>
-</footer>
-
-    <!-- Chatbot Container -->
-    <div id="chatbot-container">
-        <div id="chatbot-header">
-            <h3>Chat with Us</h3>
-            <button id="close-chatbot">&times;</button>
+    <footer>
+        <p>© 2025 Complete Analytics. All rights reserved. Designed By Jeevan K S</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
         </div>
-        <div id="chatbot-body">
-            <div id="chatbot-messages">
-                <div class="message bot-message">Hello! How can I help you today?</div>
-                <!-- Predefined Questions -->
-                <div class="quick-questions">
-                    <button class="quick-question-btn" data-question="What courses do you offer?">What courses do you offer?</button>
-                    <button class="quick-question-btn" data-question="How can I register?">How can I register?</button>
-                    <button class="quick-question-btn" data-question="What are the fees?">What are the fees?</button>
+    </footer>
+
+   <!-- Chatbot Container -->
+   <div id="chatbot-container">
+    <div id="chatbot-header">
+        <div class="chatbot-avatar">
+            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="AI Assistant">
+        </div>
+        <div class="chatbot-info">
+            <h3>Complete Analytics AI Assistant</h3>
+            <p>Ask me anything - I'll respond to every question!</p>
+        </div>
+        <button id="close-chatbot">&times;</button>
+    </div>
+    <div id="chatbot-body">
+        <div id="chatbot-messages">
+            <div class="message bot-message">
+                <div class="message-content">
+                    Hello! I'm your AI assistant for Complete Analytics. I'm here to answer any and all questions you have about:
+                    
+                    • Our courses and training programs
+                    • Project and product services
+                    • Company information
+                    • Enrollment procedures
+                    • Placements and career opportunities
+                    • And anything else you'd like to know!
+                    
+                    No question is too big or small - ask me anything!
                 </div>
+                <div class="message-time">Just now</div>
             </div>
-            <div id="chatbot-input">
-                <input type="text" id="chatbot-input-field" placeholder="Type your message...">
-                <button id="chatbot-send-btn"><i class="fas fa-paper-plane"></i></button>
+            
+            <!-- Quick Questions -->
+            <div class="quick-questions">
+                <p>Try asking me:</p>
+                <button class="quick-question-btn" data-question="What courses do you offer?">
+                    What courses do you offer?
+                </button>
+                <button class="quick-question-btn" data-question="Tell me about your Full Stack Development course">
+                    Tell me about Full Stack Development
+                </button>
+                <button class="quick-question-btn" data-question="When is the next Data Science batch starting?">
+                    When is next Data Science batch?
+                </button>
+                <button class="quick-question-btn" data-question="Tell me about your placement services">
+                    About placement services
+                </button>
+                <button class="quick-question-btn" data-question="What companies hire from your institute?">
+                    Hiring companies
+                </button>
+                <button class="quick-question-btn" data-question="How can I contact your team?">
+                    Contact information
+                </button>
+                <button class="end-chat-btn" id="end-chat-btn">
+                    End Chat
+                </button>
             </div>
         </div>
+        <div id="chatbot-input">
+            <input type="text" id="chatbot-input-field" placeholder="Ask me anything..." autocomplete="off">
+            <button id="chatbot-send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
     </div>
+</div>
 
-    <!-- Chatbot Toggle Button -->
-    <button id="chatbot-toggle-btn">
-        <i class="fas fa-comments"></i>
-    </button>
-        <!-- Callback Popup -->
-        <div id="callback-popup" class="popup">
-            <div class="popup-content">
-                <h3>Get a Callback from Us</h3>
-                <p>Leave your number, and we'll call you back!</p>
-            <form id="callback-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="tel" placeholder="Phone Number" required>
-                <button type="submit">Request Callback</button>
-            </form>
-            <button id="close-popup">&times;</button>
-        </div>
-    </div>
+<!-- Chatbot Toggle Button -->
+<button id="chatbot-toggle-btn">
+    <i class="fas fa-robot"></i>
+    <span class="notification-badge"></span>
+</button>
 
     <script src="index.js"></script>
 </body>
